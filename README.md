@@ -11,7 +11,7 @@ Proyecto para aprender angular de 0 a Master
 
 ## Crear proyecto
 
-1. Crear proyecto: $ ng new nombre-de-la-app (solo separado con - y \_, no usar la ñ)
+1. Crear proyecto: $ ng new nombre-de-la-app (no usar la ñ y solo separar con - y \_)
 2. Crearlo con ruting y con algun preprocesador si es posible
 
 ## Correr proyecto
