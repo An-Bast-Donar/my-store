@@ -1,6 +1,6 @@
 # MyStore
 
-Proyecto para aprender angular de 0 a Master
+Proyecto para aprender angular de Beginner a Master
 
 ## Instalacion
 
