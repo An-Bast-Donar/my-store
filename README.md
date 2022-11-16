@@ -30,4 +30,4 @@ Proyecto para aprender angular de Beginner a Master
 - plugin Angular Languaje Service, para mejorar el desarrollo con Angular.
 - karma: configuracion para pruebas unitarias.
 - package.json: versiones de dependencias, entre otras cosas.
-- .nvmrc: arhchivo que se debe crear para espesificar la version de node como buena practica en caso de unar nvm (node version manager, interfaz que gestiona diferentes versiones de node para diferentes proeyctos)
+- .nvmrc: arhchivo que se debe crear para espesificar la version de node como buena practica en caso de usar nvm (node version manager, interfaz que gestiona diferentes versiones de node para diferentes proeyctos)
