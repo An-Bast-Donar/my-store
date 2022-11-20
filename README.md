@@ -35,3 +35,4 @@ Proyecto para aprender angular de Beginner a Master
 ## Documentacion del proyecto
 
 - typescriptrepaso.ts: repaso de Ts
+- app.component.html: bases Angula
