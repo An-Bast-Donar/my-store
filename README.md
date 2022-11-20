@@ -20,7 +20,7 @@ Proyecto para aprender angular de Beginner a Master
 2. correr proeycto y abrirlo automaticamente: $ ng serve -o
 3. correr proeycto abrirlo automaticamente y cambiar el puerto: $ ng serve -o --port=3500
 
-## Estructura del proyecto proyecto
+## Estructura del un proyecto
 
 - src: corazon de la aplicacion, componentes, html, css, routin, entre otras cosas.
 - .browserslistrc: le indica a angular en que navegadores debe ser compatible la aplicacion.
@@ -31,3 +31,7 @@ Proyecto para aprender angular de Beginner a Master
 - karma: configuracion para pruebas unitarias.
 - package.json: versiones de dependencias, entre otras cosas.
 - .nvmrc: arhchivo que se debe crear para espesificar la version de node como buena practica en caso de usar nvm (node version manager, interfaz que gestiona diferentes versiones de node para diferentes proeyctos)
+
+## Documentacion del proyecto
+
+- typescriptrepaso.ts: repaso de Ts
