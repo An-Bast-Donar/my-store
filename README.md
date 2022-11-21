@@ -36,3 +36,5 @@ Proyecto para aprender angular de Beginner a Master
 
 - typescriptrepaso.ts: repaso de Ts
 - app.component.html: bases Angula
+- app.module.ts: archivo donde se importan los modulos que usaremos para el proyecto
+- product.model.ts: archivo creado para crear las interfaces para objetos de nuestro proyecto
