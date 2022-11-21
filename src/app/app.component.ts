@@ -43,6 +43,18 @@ export class AppComponent {
     img: 'assets/images/aprendiendocodigo.jpg',
     complete: false,
   }
+  person06 = {
+    name: 'Juan',
+    age: 26,
+    img: 'assets/images/aprendiendocodigo.jpg',
+    complete: false,
+  }
+  person07 = {
+    name: 'Juan',
+    age: 26,
+    img: 'assets/images/aprendiendocodigo.jpg',
+    complete: false,
+  }
   names = ['Nicolas', 'Juan', 'Julian', 'Orlando'];
   newName = '';
   /**

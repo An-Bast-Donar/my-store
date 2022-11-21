@@ -26,6 +26,18 @@
   }
 }
 
+.message-error{
+  color: red;
+  opacity: 0;
+  margin: 0 0 10px;
+  /*transicion de todas las propiedades a sus nuevos valores*/
+  transition: all linear .5s;
+  /*identificador para si se añade la clase hija en compañia de la padre*/
+  &.showerror{
+    opacity: 1;
+  }
+}
+
 /*media queries: consulta de medios, para responsive*/
 @media screen and (min-width: 600px){
   .products--grid {

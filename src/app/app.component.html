@@ -149,6 +149,8 @@
 ========== ESTILOS ==========
 - Añadimos estilos a las etiquetas como se hace nativamente en html, mediante el atributo class y el atributo id
 -->
+<h1 class="tema">ESTILOS</h1>
+<p class="descripcion">Estilo basico responsive, usando media queries en el scss</p>
 <div class="products--grid">
   <div *ngFor="let product of products">
     <img [src]="product.image" alt="image">
@@ -156,3 +158,31 @@
     <p>{{ product.name }}</p>
   </div>
 </div>
+
+<hr>
+
+<!--
+========== CLASS & STYLE ==========
+- Podemos añadir clases segun condiciones mediante la estructura: [class.clase_a_añadir]="condion_a_cumplir"
+- Podemos añadir stilos dependiendo de una condicion mediante la estuctura: [style.propiedad_css]="condicion_a_evaluar ? 'valor_posible_1' : 'valor_posible_2'"
+- La estrctura de style, tambien resibe unicamente el valor a que toma el estilo indicado
+-->
+<h1 class="tema">CLASS & STYLE</h1>
+<p class="descripcion">Con [class.] o [style.] se le pueden añadir clases y estilos dinamicos a nuestros
+  elementos</p>
+<!--Los id con # deben referenciarse despues de crearse, si se referencian antes de la creacion da error-->
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person06.name">
+<p class="message-error" [class.showerror]="nameInput2.invalid">El campo es requerido</p>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person07.name">
+<p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Texto texto texto</p>
+<div>
+  <div>
+    <input type="number" [(ngModel)]="person07.age" />
+  </div>
+  <div>
+    <!--Las propiedades que reciben una unidad, se les puede indicar el valor de dicha unidad-->
+    <img [style.width.px]="person07.age" [src]="person07.img" />
+  </div>
+</div>
+
+<hr>
