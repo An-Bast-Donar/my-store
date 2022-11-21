@@ -4,10 +4,11 @@
 
 <!--
 ========== INTERPOLACION ==========
-- Interpreta codigo Js dentro de las dobles llaves, como operaciones o funciones de Js para manipulacion de datos.
+- Interpreta codigo Js dentro de las dobles llaves, como operaciones o funciones de Js para manipulacion de datos
 - Interpreta Funciones o variables declaradas en el Ts
 - Se puede usar para declarar los valores de los atributos de una etiqueta, pero no es recomendato
 -->
+<h2>INTERPOLACION</h2>
 <p>{{' HOLA MUNDO '.repeat(5)}}</p>
 <p>3 + 3 = {{ 3 + 3 }}</p>
 <p>Hola, soy {{name}} y tengo {{age}} años</p>
@@ -24,7 +25,85 @@
 <img src="direccion_del_archivo">
 <img [src]="variable_en_el_ts_con_la_direccion_del_archivo">
 -->
-<img [src]="person.img" width="200">
-<input [value]="person.name" type="text">
-<progress [value]="person.age" max="100"></progress>
-<button [disabled]="person.complete">ENVIAR</button>
+<h2>BINDING</h2>
+<img [src]="person01.img" width="200">
+<input [value]="person01.name" type="text">
+<progress [value]="person01.age" max="100"></progress>
+<button [disabled]="person01.complete">ENVIAR</button>
+
+<hr>
+
+<!--
+========== EVENTOS ==========
+- Se encierran dentro de parentesis y apunta a un metodo declarado en nuestro ts
+- Hay muchos eventos ademas de los aca mostrados que se pueden consultar en MDN
+- El evento es un objeto con muchos datos que se puede enviar por parametro a la funcion que dispara el evento: $event
+-->
+<h2>EVENTOS</h2>
+<button (click)="toggleButton()">Activar/Desactivar Envio</button>
+<button (click)="increaseAge()">Age ++</button>
+<p>Edad: {{ person02.age }}</p>
+<input type="text" [value]="person02.name" (keyup)="changeName($event)" />
+<p>Nombre: {{ person02.name }}</p>
+
+<hr>
+
+<!--
+========== NGMODEL ==========
+- Funcion entre escuchar un evento y setear una propiedad, especial para los inputs
+- Angular es incremental y modular, por ende hay que impotar FormsModule en nuestro archivo App.module.ts
+- Envia y setea el valor automaticamente del input
+- Puede manejar validaciones nativas de HTML haciendo referencia a la etiqueta con un id: #id_de_la_etiqueta_para_validaciones_con_ngModel
+- Ejemplo:
+<input type="text" [value]="person.name" (keyup)="changeName($event)" />
+<input type="text" [(ngModel)]="person.name" />
+-->
+<h2>NGMODEL</h2>
+<input type="text" #nameInput="ngModel" required [(ngModel)]="person03.name" />
+<p>Valid: {{ nameInput.valid }}</p>
+<p>Nombre: {{ person03.name }}</p>
+<input type="number" #ageInput="ngModel" min="18" max="32" required [(ngModel)]="person03.age" />
+<p>Valid: {{ ageInput.valid }}</p>
+<p>Nombre: {{ person03.age }}</p>
+
+<hr>
+
+<!--
+========== NGIF ==========
+- Directivas: son las que inician con la sintaxis *ng
+- La directiva *ngIf nos permite mostrar un contenido si el valor de la directiva es true
+- el valor de la directiva puede ser tan compleja como se requiera, añadiendo comparadores && o || tal cual dentro de un if() en Ts
+- Se puede mostrar una etiquet por defecto en caso de que el *ngIf no se cumpla, haciendo uso del #id y una etiqueta ng-template
+-->
+<h2>NGIF</h2>
+<input type="text" [(ngModel)]="person04.name" />
+<p>Nombre: <span *ngIf="person04.age == 26 && person04.name == 'Sebastian'; else myBlock">{{ person04.name }}</span></p>
+<ng-template #myBlock>
+  <span>Escriba un nombre valido</span>
+</ng-template>
+
+<hr>
+
+<!--
+========== NGFOR ==========
+- Directiva *ngFor
+- Itera etiquetas segun la cantidad de elementos de un array o lista en nuestro Ts (variables iterables)
+- Esta directiva tambien nos permite saber el indice de cada elemento
+-->
+<h2>NGFOR</h2>
+<input type="text" [(ngModel)]="newName" />
+<button (click)="addName()">Añadir Nombre</button>
+<ul>
+  <li *ngIf="names.length === 0">No hay nombres</li>
+  <li *ngFor="let name of names; index as i">{{i}} {{name}} <button (click)="deleteName(i)">Eliminar</button></li>
+</ul>
+<div>
+  <div *ngFor="let product of products">
+    <strong>{{ product.name }}</strong>
+    <p>{{ product.price }}</p>
+    <img width="100" [src]="product.image" alt="image">
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
