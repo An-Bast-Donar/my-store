@@ -117,3 +117,26 @@
     <br>
   </div>
 </div>
+
+<hr>
+
+<!--
+========== NGSWITCH ==========
+
+-->
+<h1 class="tema">NGSWITCH</h1>
+<p class="descripcion">Estructura de control que agrupa multiples directivas *ngIf, tambien puede tener una opcion por
+  defecto que se muestre si no se cumple ninguna condicion</p>
+<input type="text" required [(ngModel)]="person05.name" />
+<div [ngSwitch]="person05.name">
+  <p *ngSwitchCase="'nicolas'">
+    La persona es nicolas
+  </p>
+  <p *ngSwitchCase="'julian'">
+    La persona es Julian
+  </p>
+  <p *ngSwitchCase="'camilo'">
+    La persona es Camilo
+  </p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
