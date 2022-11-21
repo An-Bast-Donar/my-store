@@ -38,3 +38,7 @@ Proyecto para aprender angular de Beginner a Master
 - app.component.html: bases Angula
 - app.module.ts: archivo donde se importan los modulos que usaremos para el proyecto
 - product.model.ts: archivo creado para crear las interfaces para objetos de nuestro proyecto
+
+## Debug
+
+Existe la extension Angular DevTools para Chrome, nos avisa que webs estan construidas en angular y nos habilita mas opciones en el inspector para debuguear diferentes aspectos de una web en esta tecnologia
