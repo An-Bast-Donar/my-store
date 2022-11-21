@@ -7,3 +7,32 @@
 .tema{
   margin-bottom: 0;
 }
+
+/*como usamos sass podemos tener identificadores anidados*/
+.products--grid{
+  display: flex;
+  flex-direction: column;
+  div{
+    img{
+      width: 100%;
+      border-radius: 10px;
+    }
+    strong, p{
+      margin: 0;
+    }
+    p{
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/*media queries: consulta de medios, para responsive*/
+@media screen and (min-width: 600px){
+  .products--grid {
+    display: grid;
+    /*cantidad de columnas*/
+    grid-template-columns: repeat(5, 1fr);
+    /*espacio entre columnas*/
+    grid-gap: 15px;
+  }
+}

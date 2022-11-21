@@ -64,6 +64,7 @@
 <h2 class="tema">NGMODEL</h2>
 <p class="descripcion">Relaciona un input del html con una variable del ts, estableciendo una relacion de comunicacion
   en ambos sentidos</p>
+<!--No tener varios id iguales en el mismo template por que pueden haber conflictos-->
 <input type="text" #nameInput="ngModel" required [(ngModel)]="person03.name" />
 <p>Valid: {{ nameInput.valid }}</p>
 <p>Nombre: {{ person03.name }}</p>
@@ -140,4 +141,18 @@
     La persona es Camilo
   </p>
   <p *ngSwitchDefault>No hace match</p>
+</div>
+
+<hr>
+
+<!--
+========== ESTILOS ==========
+-->
+
+<div class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image">
+    <strong>{{ product.price }}</strong>
+    <p>{{ product.name }}</p>
+  </div>
 </div>
