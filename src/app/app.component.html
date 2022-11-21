@@ -8,7 +8,8 @@
 - Interpreta Funciones o variables declaradas en el Ts
 - Se puede usar para declarar los valores de los atributos de una etiqueta, pero no es recomendato
 -->
-<h2>INTERPOLACION</h2>
+<h2 class="tema">INTERPOLACION</h2>
+<p class="descripcion">Es una forma de comunicar datos del ts al html</p>
 <p>{{' HOLA MUNDO '.repeat(5)}}</p>
 <p>3 + 3 = {{ 3 + 3 }}</p>
 <p>Hola, soy {{name}} y tengo {{age}} años</p>
@@ -25,7 +26,8 @@
 <img src="direccion_del_archivo">
 <img [src]="variable_en_el_ts_con_la_direccion_del_archivo">
 -->
-<h2>BINDING</h2>
+<h2 class="tema">BINDING</h2>
+<p class="descripcion">Es una forma de comunicacion entre los atributos de las etiquetas html y las variables del ts</p>
 <img [src]="person01.img" width="200">
 <input [value]="person01.name" type="text">
 <progress [value]="person01.age" max="100"></progress>
@@ -39,7 +41,8 @@
 - Hay muchos eventos ademas de los aca mostrados que se pueden consultar en MDN
 - El evento es un objeto con muchos datos que se puede enviar por parametro a la funcion que dispara el evento: $event
 -->
-<h2>EVENTOS</h2>
+<h2 class="tema">EVENTOS</h2>
+<p class="descripcion">Es una forma de ejecutar metodos del ts mediante interacciones o eventos en el html</p>
 <button (click)="toggleButton()">Activar/Desactivar Envio</button>
 <button (click)="increaseAge()">Age ++</button>
 <p>Edad: {{ person02.age }}</p>
@@ -58,7 +61,9 @@
 <input type="text" [value]="person.name" (keyup)="changeName($event)" />
 <input type="text" [(ngModel)]="person.name" />
 -->
-<h2>NGMODEL</h2>
+<h2 class="tema">NGMODEL</h2>
+<p class="descripcion">Relaciona un input del html con una variable del ts, estableciendo una relacion de comunicacion
+  en ambos sentidos</p>
 <input type="text" #nameInput="ngModel" required [(ngModel)]="person03.name" />
 <p>Valid: {{ nameInput.valid }}</p>
 <p>Nombre: {{ person03.name }}</p>
@@ -75,7 +80,10 @@
 - el valor de la directiva puede ser tan compleja como se requiera, añadiendo comparadores && o || tal cual dentro de un if() en Ts
 - Se puede mostrar una etiquet por defecto en caso de que el *ngIf no se cumpla, haciendo uso del #id y una etiqueta ng-template
 -->
-<h2>NGIF</h2>
+<h2 class="tema">NGIF</h2>
+<p class="descripcion">Directiva *ngIf, muestra la etiqueta y su contenido en el html siempre y en cuanto la condicion
+  se cumpla, puede
+  contener una etiqueta de control que se muestra si la condicion no se cumple</p>
 <input type="text" [(ngModel)]="person04.name" />
 <p>Nombre: <span *ngIf="person04.age == 26 && person04.name == 'Sebastian'; else myBlock">{{ person04.name }}</span></p>
 <ng-template #myBlock>
@@ -90,7 +98,9 @@
 - Itera etiquetas segun la cantidad de elementos de un array o lista en nuestro Ts (variables iterables)
 - Esta directiva tambien nos permite saber el indice de cada elemento
 -->
-<h2>NGFOR</h2>
+<h2 class="tema">NGFOR</h2>
+<p class="descripcion">Directiva *ngFor, repite una etiqueta en el html, tantas veces como se itere el objeto que
+  referencia</p>
 <input type="text" [(ngModel)]="newName" />
 <button (click)="addName()">Añadir Nombre</button>
 <ul>
