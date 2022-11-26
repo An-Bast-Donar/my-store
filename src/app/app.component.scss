@@ -36,6 +36,13 @@
   &.showerror{
     opacity: 1;
   }
+  &.mostrarerror{
+    opacity: 1;
+  }
+  &.mostrarvalid{
+    color: green;
+    opacity: 1;
+  }
 }
 
 /*media queries: consulta de medios, para responsive*/

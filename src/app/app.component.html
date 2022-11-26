@@ -186,3 +186,32 @@
 </div>
 
 <hr>
+
+<!--
+========== NGCLASS & NGSTYLE ==========
+- Directiva [ngClass] y [ngStyle] aplican clase o estilos dependiendo de los condicionales referenciados
+-->
+<h1 class="tema">NGCLASS & NGSTYLE</h1>
+<p class="descripcion">Directivas [ngClass.] y [ngStyle.] aplican clase o estilos dependiendo de los condicionales
+  referenciados</p>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="person08.name">
+<p class="message-error" [ngClass]="{'mostrarerror': nameInput4.invalid, 'mostrarvalid': nameInput4.valid}">El campo
+  es requerido</p>
+
+<div class="styles">
+  <div>
+    <input type="number" [(ngModel)]="box.width" />
+    <input type="number" [(ngModel)]="box.height" />
+    <input type="color" [(ngModel)]="box.background" />
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      'display': 'block'
+    }"></div>
+  </div>
+</div>
+
+<hr>

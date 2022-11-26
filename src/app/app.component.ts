@@ -55,6 +55,17 @@ export class AppComponent {
     img: 'assets/images/aprendiendocodigo.jpg',
     complete: false,
   }
+  person08 = {
+    name: 'Juan',
+    age: 26,
+    img: 'assets/images/aprendiendocodigo.jpg',
+    complete: false,
+  }
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  };
   names = ['Nicolas', 'Juan', 'Julian', 'Orlando'];
   newName = '';
   /**
