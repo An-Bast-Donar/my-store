@@ -215,3 +215,32 @@
 </div>
 
 <hr>
+
+<!--
+========== FORMULARIO ==========
+- Los inputs dentro de los formularios deben contener el atributo name
+- Podemos crar un id con para manejar el estado de nuestro formulario
+- La funcion que se ejecuta al enviar el formulario esta en la etiqueta form
+-->
+<h1 class="tema">FORMULARIOS</h1>
+<p class="descripcion">Angular permite, crear formularios, validar sus campos y ejecutar y modificar la funcion submit
+  de forma facil y rapida</p>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input-group">
+    <label for="name">Nombre</label>
+    <input type="text" name="name" required id="name" [(ngModel)]="register.name" />
+    <!--p>Mensajes de error</p-->
+  </div>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" required id="email" [(ngModel)]="register.email" />
+    <!--p>Mensajes de error</p-->
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" required id="password" [(ngModel)]="register.password" />
+    <!--p>Mensajes de error</p-->
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Registrar</button>
+  <button type="button">Accion</button>
+</form>

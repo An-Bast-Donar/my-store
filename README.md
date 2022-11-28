@@ -42,3 +42,22 @@ Proyecto para aprender angular de Beginner a Master
 ## Debug
 
 Existe la extension Angular DevTools para Chrome, nos avisa que webs estan construidas en angular y nos habilita mas opciones en el inspector para debuguear diferentes aspectos de una web en esta tecnologia
+
+## Deployment
+
+- Lanzamiento de la aplicacion a un ambiente productivo, mediante firebase hosting
+- Para firebase hosting se requiere un gmail
+- Crear un nuevo proyecto en console firebase
+- Usamos en servicio de hosting y seguimos los pasos
+- Instalamos firebase tools en nuestra maquina: $ npm install -g firebase-tools
+- Comprobamos la version de firebase tools en nuestro proeycto local: $ firebase -V
+- Conectamos nuestra maquina con la configuracion de consola de firebase: $ firebase login
+- Corremos la instruccion para seleccionar los servicios que usaremos, el proyecto de firebase, la carpeta a distribuir y otras opciones : $ firebase init
+- Se creara una carpeta de distribucion con el nombre proporcionado, esta carpeta puede ser eliminada, puesto angular genera su propia carpeta de despliega a la que se le puede hacer referencia en las configuraciones para el despliegue con firebase hosting
+- En el nuevo archivo firebase.json se puede configurar la ruta de la carpeta de despliegue
+- Generar una compilacion de angular a nivel productivo, el comando: $ ng build, con este comando generamos una compilaicion a produccion, este comando transpira el proyecto, pasa de sass a css, de ts a js y otras optimizaciones para que el proyecto quede en un alto nivel, la compilacion de este proyecto se genera en la carpeta dist/nombre_del_proyecto
+- Esta carpeta es la carpeta de despliegue y contiene nuestros assets, index, y todo lo que se necesita para enviar a produccion nustro proyecto
+- Añadimos nuestra carpeta de despliegue en el archivo firebase.json
+- Con la instruccion $ firebase deploy, subimos toda nuestra carpeta de despliegue a nuestro hosting
+- Este comando nos aroa una url en la que en la que podemos visualizar nuestro proyecto en ambiente productivo, esta url es un dominio con https incluido
+- Este proyecto podemos visualizarlo en internet mediante la url: https://angularstore-pltz.web.app/
