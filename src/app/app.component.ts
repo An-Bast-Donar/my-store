@@ -130,4 +130,9 @@ export class AppComponent {
   onRegister() {
     console.log(this.register);
   }
+
+  recibeSaludo(saludo: string) {
+    console.log(saludo);
+    console.log("se recibe un comunicado en el padre");
+  }
 }

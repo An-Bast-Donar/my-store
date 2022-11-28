@@ -61,3 +61,10 @@ Existe la extension Angular DevTools para Chrome, nos avisa que webs estan const
 - Con la instruccion $ firebase deploy, subimos toda nuestra carpeta de despliegue a nuestro hosting
 - Este comando nos aroa una url en la que en la que podemos visualizar nuestro proyecto en ambiente productivo, esta url es un dominio con https incluido
 - Este proyecto podemos visualizarlo en internet mediante la url: https://angularstore-pltz.web.app/
+
+## Artefactos nucleos de angular
+
+- Componentes: bloque principal para aplicaciones en angular, normalmente y es de buena practica que los componentes tengan responsabilidades unicas y estilos apropiados, los componentes tienen basicamente cuatro archivos, el de logica, el de pruebas, el html y el de estilos, para crear un compoennete y toda la logica que lo respalda se debe ejecutar el comando: $ ng g c ruta/nombre_componente
+- Pipes:
+- Directivas:
+- Servicios:

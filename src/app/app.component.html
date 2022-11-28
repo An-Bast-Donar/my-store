@@ -126,7 +126,7 @@
 - Se declara enrte corchetes
 - Es una forma de agrupar diferentes ngIf
 -->
-<h1 class="tema">NGSWITCH</h1>
+<h2 class="tema">NGSWITCH</h2>
 <p class="descripcion">Estructura de control que agrupa multiples directivas *ngIf, tambien puede tener una opcion por
   defecto que se muestre si no se cumple ninguna condicion</p>
 <input type="text" required [(ngModel)]="person05.name" />
@@ -149,7 +149,7 @@
 ========== ESTILOS ==========
 - Añadimos estilos a las etiquetas como se hace nativamente en html, mediante el atributo class y el atributo id
 -->
-<h1 class="tema">ESTILOS</h1>
+<h2 class="tema">ESTILOS</h2>
 <p class="descripcion">Estilo basico responsive, usando media queries en el scss</p>
 <div class="products--grid">
   <div *ngFor="let product of products">
@@ -167,7 +167,7 @@
 - Podemos añadir stilos dependiendo de una condicion mediante la estuctura: [style.propiedad_css]="condicion_a_evaluar ? 'valor_posible_1' : 'valor_posible_2'"
 - La estrctura de style, tambien resibe unicamente el valor a que toma el estilo indicado
 -->
-<h1 class="tema">CLASS & STYLE</h1>
+<h2 class="tema">CLASS & STYLE</h2>
 <p class="descripcion">Con [class.] o [style.] se le pueden añadir clases y estilos dinamicos a nuestros
   elementos</p>
 <!--Los id con # deben referenciarse despues de crearse, si se referencian antes de la creacion da error-->
@@ -191,7 +191,7 @@
 ========== NGCLASS & NGSTYLE ==========
 - Directiva [ngClass] y [ngStyle] aplican clase o estilos dependiendo de los condicionales referenciados
 -->
-<h1 class="tema">NGCLASS & NGSTYLE</h1>
+<h2 class="tema">NGCLASS & NGSTYLE</h2>
 <p class="descripcion">Directivas [ngClass.] y [ngStyle.] aplican clase o estilos dependiendo de los condicionales
   referenciados</p>
 <input type="text" required #nameInput4="ngModel" [(ngModel)]="person08.name">
@@ -222,7 +222,7 @@
 - Podemos crar un id con para manejar el estado de nuestro formulario
 - La funcion que se ejecuta al enviar el formulario esta en la etiqueta form
 -->
-<h1 class="tema">FORMULARIOS</h1>
+<h2 class="tema">FORMULARIOS</h2>
 <p class="descripcion">Angular permite, crear formularios, validar sus campos y ejecutar y modificar la funcion submit
   de forma facil y rapida</p>
 <form (ngSubmit)="onRegister()" #myForm="ngForm">
@@ -244,3 +244,23 @@
   <button [disabled]="myForm.invalid" type="submit">Registrar</button>
   <button type="button">Accion</button>
 </form>
+
+<hr>
+
+<!--
+========== RENDERIZANDO COMPONENTES ==========
+- El html de un componente se llama mediante su selector en otro html
+- Un compoennete se traduce en una etiqueta html gracias a su selector y se le pueden añadir atributos con @Input y recibir eventos con @Output
+-->
+<h2 class="tema">COMPONENTES</h2>
+<p class="descripcion">Los compoenentes deben mantener funcionalidades unicas, son llamados por medio de su selector en
+  otros componenetes html como si fueran una etiqueta, sus variables con el @input son atributos, y sus variables con el
+  @output son eventos</p>
+
+<!--
+selector de este componente
+se le envian datos mediante atributos
+recibe datos mediante eventos, el recibir datos puede o no hacer uso del argumento $event que contiene los datos que se envian mediante ese evento
+-->
+<app-img (saludo)="recibeSaludo($event)"
+  contenido="Esto es el contenido de un atributo que se puede modificar dinamicamente con un ngModel"></app-img>
