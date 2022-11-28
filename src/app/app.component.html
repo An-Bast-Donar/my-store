@@ -258,9 +258,10 @@
   @output son eventos</p>
 
 <!--
-selector de este componente
-se le envian datos mediante atributos
-recibe datos mediante eventos, el recibir datos puede o no hacer uso del argumento $event que contiene los datos que se envian mediante ese evento
+- selector de este componente
+- se le envian datos mediante atributos
+- recibe datos mediante eventos, el recibir datos puede o no hacer uso del argumento $event que contiene los datos que se envian mediante ese evento
+- un componenete se puede llamar varias veces desde otro componenete
 -->
 <app-img (saludo)="recibeSaludo($event)"
   contenido="Esto es el contenido de un atributo que se puede modificar dinamicamente con un ngModel"></app-img>
