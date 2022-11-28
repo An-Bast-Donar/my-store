@@ -68,3 +68,11 @@ Existe la extension Angular DevTools para Chrome, nos avisa que webs estan const
 - Pipes:
 - Directivas:
 - Servicios:
+
+## Ciclo de vida de los componentes
+
+- El constructor corre antes del render y corre solo una vez, no hacer llamadas asy aca
+- El onInit corre antes del render y corre una sola vez, se pueden realizar llamadas asy aca
+- El onChanges corre antes y durante el render y se ejecuta cada vez que hay un cambio en los inputs
+- El afterViewInit corre despues del render, es usado para manipular los hijos del componente
+- El onDestroy se ejecuta al momento de eliminar el componente, hay eventos que se mantienen corriendo aun despues de destruir el componente, dichos eventos hay que saber detenerlos dentro de esta funsion, al momento de destruir el componente

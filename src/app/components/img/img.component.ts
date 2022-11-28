@@ -16,8 +16,20 @@ export class ImgComponent implements OnInit {
    * Sirve para enviar datos del compoennte padre al componente hijo
    * Los datos se envian en forma de atributo dentro de la etiqueta que referencia este componente
    * Las variables con el decorador Input seran las variables que se reciben desde el padre
+   * Se puede alterar el nombre del atributo desde el argumento del decorador
+   * Ej: @Input('nombre_alterado') nombre_variable;
+   * El nombre alterado de la variable sera el que se usara como atributo al moemnto de usar nuestro compoenente en otro componente
    */
   @Input() contenido: string = "No hay contenido en el atributo";
+  /**
+   * El @Input() tambien puede ejecutar una funcion
+   */
+  descripcion: string = '';
+  @Input('descripcion')
+  set setDescripcion(newDescripcion: string) {
+    this.descripcion = newDescripcion
+  }
+
   /**
    * Las variables con el decorador Output son las variables que se emiten como eventos
    * Sirven para trasmitir datos del hijo al padre
