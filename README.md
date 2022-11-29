@@ -85,7 +85,7 @@ Es un gran uso para los servicios y angular cuenta con su propio modulo que perm
 
 Trata sobre el estado de la aplicacion en relacion a los datos, sirve para poder comunicar nodos de nuestra estructura de arbol html, entendiendo que cada nodo es un componente, este tema implementa el patron observable, para difundir cambios en los datos a los componenetes interesados, suscritos a la observacion
 
-## linters
+## Linters
 
 Aplicar buenas practicas de angular de forma sistematizada, angular tiene una guia de estilos que explica como debemos nombrar archivos, variables, entre otras cosas, para configurar un linter y ver si se cumplen con estas reglas se debe:
 
