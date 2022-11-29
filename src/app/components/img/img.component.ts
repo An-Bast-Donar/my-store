@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 /**
  * Decorador que nos indica como llamar este componenete desde otras partes de nuestro proyecto
@@ -40,10 +41,19 @@ export class ImgComponent implements OnInit {
    */
   @Output() saludo = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(
+    /**
+     * Inyeccion de dependencias, esto crea una instancia singleton sin necesidad de declarlas la inicializacion
+     */
+    private productsService: ProductsService,
+  ) { }
 
   ngOnInit(): void {
     this.emitirSaludo();
+    /**
+     * Recordar que los llamados asy se hacen desde el onInit
+     */
+    this.productsService.getAllProducts().subscribe(data => { console.log("Datos del servicio:", data); });
   }
 
   emitirSaludo() {
