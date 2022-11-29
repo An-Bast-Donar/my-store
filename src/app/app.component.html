@@ -266,3 +266,23 @@
 <app-img (saludo)="recibeSaludo($event)"
   contenido="Esto es el contenido de un atributo que se puede modificar dinamicamente con un ngModel"
   descripcion="Esto es la descripcion de un atributo que se puede modificar dinamicamente con un ngModel"></app-img>
+
+<hr>
+
+<!--
+========== PIPES ==========
+- formatos para mostrar datos en el html
+- hay muchos tipos de pipes que pueden usarse para mostrar datos en pantalla, hay que buscarlos en la documentacion de angular
+- cada pipe tambien puede ser modificado, segun como la documentacion de angular explica
+- los pipes tambien pueden crearse con el comando $ ng g p ruta/nombre_del_pipe
+- los pipes son funciones que muestran de forma diferente la real impresion en el html, son como maquillar la visualizacion
+- los pipes reciben como funcion lo que se muestra en el html
+- Ej: {{ lo_que_se_muestra_dato_quemado_o_variable | funcion_que_recibe_lo_que_se_muestra_y_lo_maquilla }}
+-->
+<h2 class="tema">PIPES</h2>
+<p class="descripcion">Formato para mostrar datos en el html</p>
+<p>{{ 'min' | uppercase }}</p>
+<p>{{ 10000 | currency}}</p>
+<p>{{ fecha | date:'yyyy.MM.dd'}}</p>
+<!--pipe personalizado, creado desde cero-->
+<p>{{ 'aloH' | reverse }}</p>

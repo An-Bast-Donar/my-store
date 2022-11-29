@@ -13,6 +13,7 @@ export class AppComponent {
   name = 'Juan';
   age = 26;
   img = 'assets/images/aprendiendocodigo.jpg';
+  fecha = new Date();
   person01 = {
     name: 'Juan',
     age: 26,
