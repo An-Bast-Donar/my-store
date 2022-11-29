@@ -65,8 +65,8 @@ Existe la extension Angular DevTools para Chrome, nos avisa que webs estan const
 ## Artefactos nucleos de angular
 
 - Componentes: bloque principal para aplicaciones en angular, normalmente y es de buena practica que los componentes tengan responsabilidades unicas y estilos apropiados, los componentes tienen basicamente cuatro archivos, el de logica, el de pruebas, el html y el de estilos, para crear un compoennete y toda la logica que lo respalda se debe ejecutar el comando: $ ng g c ruta/nombre_componente
-- Pipes: funciones para mostrar datos en el html, para crear un pipe con toda la logica que lo respalda se debe ejecutar: $ ng g p ruta/nombre_del_pipe
-- Directivas:
+- Pipes: funcion para maquillar los datos que mostramos en el html, es como otra capa de visualizacion o modificacion por encima del dato a mostrar en el html, para crear un pipe con toda la logica que lo respalda se debe ejecutar: $ ng g p ruta/nombre_del_pipe
+- Directivas: formas de hacer modificaciones del DOM directamente, normalmente se evitan, puesto que los frameworks traen sus propias directivas como *ngIf o *ngFor para angular, sin embargo si se requiere podemos crear nuestras directivas de forma personalizada, para crear una directiva y toda la logica que lo respalda se ejecuta: $ ng g d ruta/nombre_de_la_directiva
 - Servicios: separan la logica de negocio de la ux, es una forma de hacer modular la aplicacion y consumir los datos desde los diferentes componentes, el comando para crear un servicio y toda lo logica que lo respalda es la siguiente: $ ng g s ruta/nombre_servicio
 
 ## Ciclo de vida de los componentes

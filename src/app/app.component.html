@@ -280,9 +280,24 @@
 - Ej: {{ lo_que_se_muestra_dato_quemado_o_variable | funcion_que_recibe_lo_que_se_muestra_y_lo_maquilla }}
 -->
 <h2 class="tema">PIPES</h2>
-<p class="descripcion">Formato para mostrar datos en el html</p>
+<p class="descripcion">Funcion que maquilla el dato que se muestra en el html, podemos usar tanto funciones nativas de
+  angular como crear las nuestras propias</p>
 <p>{{ 'min' | uppercase }}</p>
 <p>{{ 10000 | currency}}</p>
 <p>{{ fecha | date:'yyyy.MM.dd'}}</p>
 <!--pipe personalizado, creado desde cero-->
 <p>{{ 'aloH' | reverse }}</p>
+
+<hr>
+
+<!--
+========== DIRECTIVAS ==========
+- nos permiten modificar elementos html segun reglas especificadas en dicha directiva
+- las directivas son clases que modifican el estilo de etiquetas html
+- funcionan como atributos dentro de nuestras etiquetas
+-->
+<h2 class="tema">DIRECTIVAS</h2>
+<p class="descripcion">Son clases que modifican el estilo de nuestras etiquetas html, ademas de *ngIf, *ngFor y las
+  demas directivas nativas de angular, podemos crear nuestras propias directivas personalizadas</p>
+<div style="width: 150px; height: 150px; background-color: blue; text-align: center; color: white;" appHighlight>
+  Directiva Personalizada</div>
