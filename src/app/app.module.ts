@@ -10,13 +10,17 @@ import { AppComponent } from './app.component';
 import { ImgComponent } from './components/img/img.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { TxtComponent } from './components/txt/txt.component';
+import { BtnComponent } from './components/btn/btn.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImgComponent,
     ReversePipe,
-    HighlightDirective
+    HighlightDirective,
+    TxtComponent,
+    BtnComponent
   ],
   imports: [
     BrowserModule,
