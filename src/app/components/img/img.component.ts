@@ -26,6 +26,8 @@ export class ImgComponent implements OnInit {
    * El @Input() tambien puede ejecutar una funcion
    */
   descripcion: string = '';
+  // Declaracion estipulada para desabilitar la revicion de angular por linters
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('descripcion')
   set setDescripcion(newDescripcion: string) {
     this.descripcion = newDescripcion

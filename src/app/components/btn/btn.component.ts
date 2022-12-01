@@ -6,7 +6,7 @@ import { StoreService } from 'src/app/services/store.service';
   templateUrl: './btn.component.html',
   styleUrls: ['./btn.component.scss']
 })
-export class BtnComponent implements OnInit {
+export class BtnComponent {
 
   constructor(
     /**
@@ -15,9 +15,6 @@ export class BtnComponent implements OnInit {
      */
     private storeService: StoreService
   ) { }
-
-  ngOnInit(): void {
-  }
 
   addString() {
     this.storeService.addString('HOLA');

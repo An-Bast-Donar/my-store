@@ -86,7 +86,8 @@
   se cumpla, puede
   contener una etiqueta de control que se muestra si la condicion no se cumple</p>
 <input type="text" [(ngModel)]="person04.name" />
-<p>Nombre: <span *ngIf="person04.age == 26 && person04.name == 'Sebastian'; else myBlock">{{ person04.name }}</span></p>
+<p>Nombre: <span *ngIf="person04.age === 26 && person04.name === 'Sebastian'; else myBlock">{{ person04.name }}</span>
+</p>
 <ng-template #myBlock>
   <span>Escriba un nombre valido</span>
 </ng-template>
