@@ -55,7 +55,9 @@ export class ImgComponent implements OnInit {
     /**
      * Recordar que los llamados asy se hacen desde el onInit
      */
-    this.productsService.getAllProducts().subscribe(data => { console.log("Datos del servicio:", data); });
+    this.productsService.getAllProductsFromFake().subscribe(data => { console.log("Productos de Fake:", data); });
+    this.productsService.getAllProductsFromHeroku().subscribe(data => { console.log("Productos de Heroku:", data); });
+    this.productsService.getProductFromHeroku().subscribe(data => { console.log("Producto de Heroku:", data); });
   }
 
   emitirSaludo() {

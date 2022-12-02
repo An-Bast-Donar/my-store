@@ -91,3 +91,7 @@ Aplicar buenas practicas de angular de forma sistematizada, angular tiene una gu
 
 1. configurar un linter con: $ ng add @angular-eslint/schematics o ng add @angular-eslint/schematics@14 o algun otro dependiendo de la version de angular
 2. correr: $ ng lint, esto nos muestra en consola errores o malas practicas en las que hemos incurrido en el proyecto segun los lineamientos de angular, correr este comando tambien nos muestra que comando correr en la configuracion de un linter
+
+## Librerias comunes
+
+- Swiper: libreria para realizar sliders, se instala con $ npm i swiper en nuestro proyecto angular, se importa el modulo SwiperModule en el app.module.ts y se importan los estilos en el archivo base de estilos styles esta libreria tiene su respectiva documentacion de instalacion y uso en su portal web de internet
