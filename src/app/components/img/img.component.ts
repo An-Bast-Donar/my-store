@@ -58,6 +58,9 @@ export class ImgComponent implements OnInit {
     this.productsService.getAllProductsFromFake().subscribe(data => { console.log("Productos de Fake:", data); });
     this.productsService.getAllProductsFromHeroku().subscribe(data => { console.log("Productos de Heroku:", data); });
     this.productsService.getProductFromHeroku().subscribe(data => { console.log("Producto de Heroku:", data); });
+    this.productsService.postProductToHeroku().subscribe(data => { console.log("Producto creado en Heroku:", data); });
+    this.productsService.putProdutInHeroku().subscribe(data => { console.log("Producto cambiado con put en Heroku:", data); });
+    this.productsService.patchProductInHeroku().subscribe(data => { console.log("Producto cambiado con patch en Heroku:", data); });
   }
 
   emitirSaludo() {

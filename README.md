@@ -95,3 +95,7 @@ Aplicar buenas practicas de angular de forma sistematizada, angular tiene una gu
 ## Librerias comunes
 
 - Swiper: libreria para realizar sliders, se instala con $ npm i swiper en nuestro proyecto angular, se importa el modulo SwiperModule en el app.module.ts y se importan los estilos en el archivo base de estilos styles esta libreria tiene su respectiva documentacion de instalacion y uso en su portal web de internet
+
+## Modelos
+
+Son archivos para estructurar los objetos que vamos a crear, mediante clases o interfaces, normalmente se crean dentro de la carpeta models y con la estructura de nombre: nombre_de_mi_modelo.model.ts
