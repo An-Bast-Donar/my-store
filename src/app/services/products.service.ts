@@ -35,6 +35,19 @@ export class ProductsService {
       );
     */
     /*
+    // Para añadir mas campos al objeto que regresa el back y enviarlo a los componentes
+    // Tener encuenta que el campo debe estar mapeado en nuestra estructura de datos
+    return this.http.get<Product>(`https://example.com/api/productos/${idProduct}`)
+      .pipe(
+        map(products => products.map(item => {
+        return {
+          ...item,
+          taxes: .19 * item.price
+        }
+      }))
+      );
+    */
+    /*
     // Importando las librerias necesarias podemos manejar los errores directamente desde el servicio
     // Angular nos permite visualizar el estado del error
     return this.http.get<Product>(`https://example.com/api/productos/${idProduct}`)
