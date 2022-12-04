@@ -83,16 +83,7 @@ Existe la extension Angular DevTools para Chrome, nos avisa que webs estan const
 - Es un gran uso para los servicios y angular cuenta con su propio modulo que permite realizar estas piticiones (Angular Http), el modulo debe ser llamado desde nuestro app.module.ts y posterior inyectado en el servicio o componente en donde se vaya a usar.
 - Estas peticiones pueden crear, eliminar, consultar y actualizar informacion de una base de datos, la implementacion de estas cinco peticiones es lo que se concidera un CRUD.
 - Las peticiones con este modulo se realizan con el patron observador y cancela la observacion cada que se recibe una respuesta correcta.
-- Los problemas de CORS en las peticiones obedecen a que el API no acepta consultas desde otros dominios, esto debe resolverse desde el back, configurando los dominios de origen aceptados para hacer consultas o creando un proxy desde el front para cambiar el dominio de origen al momento de realizar la peticion, esta configuracion se crea en el archivo proxy.config.json en la raiz del proyecto con la siguiente configuracion basica:
-  {
-  "/api/\*": {
-  "target": "https://young-sands-07814.herokuapp.com",
-  "secure": true,
-  "logLevel": "debug",
-  "changeOrigin": true
-  }
-  }
-  Este archivo es llamado desde el package.json añadiendo al objeto script la linea "start:proxy": "ng serve --proxy-config ./proxy.config.json", que indica el archivo con la configuracion, por ultimo hay que volver a correr el proyecto con esta nueva linea de comando: $ start:proxy ó $ ng serve --proxy-config ./proxy.config.json
+- Los problemas de CORS en las peticiones obedecen a que el API no acepta consultas desde otros dominios, esto debe resolverse desde el back, configurando los dominios de origen aceptados para hacer consultas o creando un proxy desde el front para cambiar el dominio de origen al momento de realizar la peticion, esta configuracion se crea en el archivo proxy.config.json en la raiz del proyecto con la siguiente configuracion basica: { "/api/\*": { "target": "https://young-sands-07814.herokuapp.com", "secure": true, "logLevel": "debug", "changeOrigin": true } }. Este archivo es llamado desde el package.json añadiendo al objeto script la linea "start:proxy": "ng serve --proxy-config ./proxy.config.json", que indica el archivo con la configuracion, por ultimo hay que volver a correr el proyecto con esta nueva linea de comando: $ start:proxy ó $ ng serve --proxy-config ./proxy.config.json
 
 ## Reactividad
 
