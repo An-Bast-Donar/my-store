@@ -34,6 +34,19 @@ export class ProductsService {
         retry(2)
       );
     */
+    /*
+    // Importando las librerias necesarias podemos manejar los errores directamente desde el servicio
+    // Angular nos permite visualizar el estado del error
+    return this.http.get<Product>(`https://example.com/api/productos/${idProduct}`)
+    .pipe(
+      catchError((err: HttpErrorResponse) => {
+        if (error.status == HttpStatusCode.Forbidden) {return throwError('No tiene permisos para realizar la solicitud.');}
+        if (error.status == HttpStatusCode.NotFound) {return throwError('El producto no existe.');}
+        if (error.status == HttpStatusCode.InternalServerError) {return throwError('Error en el servidor.');}
+        return throwError('Un error inesperado ha ocurrido.');
+      })
+    );
+    */
   }
 
   /*

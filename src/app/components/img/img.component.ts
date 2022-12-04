@@ -64,6 +64,15 @@ export class ImgComponent implements OnInit {
     this.productsService.patchProductInHeroku().subscribe(data => { console.log("Producto cambiado con patch en Heroku:", data); });
     this.productsService.deleteProductOfHeroku().subscribe(data => { console.log("Producto eliminado de Heroku:", data); });
     */
+    /*
+    // Manejo de errores al momento de consumir el servicio
+    this.productsService.getProductFromHeroku().subscribe(res => {
+      console.log("Producto de Heroku:", data);
+    }, err => {
+      // codigo  ejecutar si hay un error al momento de consumir el servicio
+      // la variable err es la emitida por thrwError desde el servcio
+    });
+    */
   }
 
   emitirSaludo() {
