@@ -38,6 +38,7 @@ Proyecto para aprender angular de Beginner a Master
 - app.component.html: bases Angula
 - app.module.ts: archivo donde se importan los modulos que usaremos para el proyecto
 - product.model.ts: archivo creado para crear las interfaces para objetos de nuestro proyecto
+- promesavsobservable.js: describe las diferencias entre un observable y una promesa
 
 ## Debug
 
@@ -81,6 +82,7 @@ Existe la extension Angular DevTools para Chrome, nos avisa que webs estan const
 
 Es un gran uso para los servicios y angular cuenta con su propio modulo que permite realizar estas piticiones (Angular Http), el modulo debe ser llamado desde nuestro app.module.ts y posterior inyectado en el servicio o componente en donde se vaya a usar
 Estas peticiones pueden crear, eliminar, consultar y actualizar informacion de una base de datos, la implementacion de estas cinco peticiones es lo que se concidera un CRUD
+Las peticiones con este modulo se realizan con el patron observador y cancela la observacion cada que se recibe una respuesta correcta
 
 ## Reactividad
 

@@ -25,6 +25,15 @@ export class ProductsService {
   getProductFromHeroku() {
     let id: number = 5;
     return this.http.get(`https://young-sands-07814.herokuapp.com/api/products/${id}`);
+    /*
+    // Las peticiones se pueden intentar pedir varias veces en caso de no obtener una respuesta correcta
+    // Para esto se necesita importar: import { retry } from 'rxjs/operators';
+    // Con otras importaciones tambien podemos darles un delay a las repeticiones o un condicional a cada una
+    return this.http.get<Product>(`https://example.com/api/productos/${idProduct}`)
+      .pipe(
+        retry(2)
+      );
+    */
   }
 
   /*
