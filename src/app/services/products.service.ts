@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,27 @@ export class ProductsService {
     let id: number = 5;
     return this.http.get(`https://young-sands-07814.herokuapp.com/api/products/${id}`);
   }
+
+  /*
+  es buena practica que la paginasion se retorne desde el back
+  los parametros por url en httpCLiente se envian con un objeto llamado parms como argumento de la funcion http a usar
+  */
+  getProductsParams(offset: number, limit: number) {
+    return this.http.get(`https://example.com/api/productos`, { params: { offset, limit } });
+  }
+
+  /*
+  // funcion que recibe o no parametros para la paginacion desde bd
+  getProductFromHeroku(limit?: number, offset?: number) {
+    let id: number = 5;
+    let params = new HttpParams();
+    if (limit && offset) {
+      params = params.set('limit', limit);
+      params = params.set('offset', limit);
+    }
+    return this.http.get(`https://young-sands-07814.herokuapp.com/api/products/${id}`, { params });
+  }
+  */
 
   postProductToHeroku() {
     let product: object = {
