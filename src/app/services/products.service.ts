@@ -64,4 +64,12 @@ export class ProductsService {
     return this.http.put(`https://young-sands-07814.herokuapp.com/api/products/${id}`, product);
   }
 
+  /*
+  algunas bases de datos regresan un boleano que idica si se elimino o no el producto y otros regresan el producto que se elimino
+  */
+  deleteProductOfHeroku() {
+    let id: number = 51;
+    return this.http.delete(`https://young-sands-07814.herokuapp.com/api/products/${id}`);
+  }
+
 }
