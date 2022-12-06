@@ -128,4 +128,11 @@ export class ProductsService {
     return this.http.delete(`https://young-sands-07814.herokuapp.com/api/products/${id}`);
   }
 
+  /*
+  Callback Hell
+  Peticiones que dependen una de otra
+  En las promesas se evita con el .then o ejecutando con varios away
+
+  */
+
 }

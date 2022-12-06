@@ -34,11 +34,18 @@ Proyecto para aprender angular de Beginner a Master
 
 ## Documentacion del proyecto
 
-- typescriptrepaso.ts: repaso de Ts
-- app.component.html: bases Angula
-- app.module.ts: archivo donde se importan los modulos que usaremos para el proyecto
-- product.model.ts: archivo creado para crear las interfaces para objetos de nuestro proyecto
 - promesavsobservable.js: describe las diferencias entre un observable y una promesa
+- typescriptrepaso.ts: repaso de Ts
+- product.model.ts: archivo creado para crear una interfaz para un objeto de nuestro proyecto
+- app.module.ts: archivo donde se importan los modulos que usaremos para el proyecto
+- app.component.html y .ts: bases Angula
+- services/store: servicio donde creamos un observable
+- services/products: servicio donde usamos la libreria HttpClient y creamos funciones que consumen APIs
+- components/txt y btn: hacen uso del servicio store e implementa ejemplo de como usarse
+- components/img: implementa las funciones del servicio products, contiene ejemplos y explicaciones de los mismos
+- pipes/reverse: bases sobre los pipes (explicado tambien en el app.component)
+- models/product: bases sobre creacion de interfaces
+- directives/highlight: bases sobre directivas (explicado tambien en el app.component)
 
 ## Debug
 
@@ -106,4 +113,8 @@ Son archivos para estructurar los objetos que vamos a crear, mediante clases o i
 
 ## Ambientes en angular
 
-En angular se pueden tener N cantidad de ambientes, cada ambiente con sus propias variables de entorno y mas espesificaciones, al ejecutar $ ng serve, angular corre en ambiente de desarrollo por defecto, esa ejecucion es lo mismo que ejecutar $ ng serve --configuration development, por ende si queremos correr en ambiente productivo se debe ejecutar: $ ng serve --configuration production, para configurar la ejecucion de otros ambientes con sus propias variables, se debe configurar el archovo angular.json
+En angular se pueden tener N cantidad de ambientes, cada ambiente con sus propias variables de entorno y mas espesificaciones, al ejecutar $ ng serve, angular corre en ambiente de desarrollo por defecto, esa ejecucion es lo mismo que ejecutar $ ng serve --configuration development, por ende si queremos correr en ambiente productivo se debe ejecutar: $ ng serve --configuration production, para configurar la ejecucion de otros ambientes con sus propias variables, se debe configurar el archovo angular.json y se deben crear los ts necesarios en la carpeta environments del proyecto, configurando cada ts con sus variables especificas segun el ambiente al que referencien
+
+## Callback Hell
+
+Esta practica hay que evitarla, se presenta cuando una peticion depende de otra y se empiesa a anidar y a anidar peticiones dentro de peticiones.

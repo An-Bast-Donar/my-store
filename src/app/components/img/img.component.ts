@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
+import { switchMap } from 'rxjs/operators';
+import { zip } from 'rxjs';
 
 /**
  * Decorador que nos indica como llamar este componenete desde otras partes de nuestro proyecto
@@ -81,6 +83,74 @@ export class ImgComponent implements OnInit {
      * El evento emitido puede o no enviar un dato en su argumento
      */
     this.saludo.emit("hola padre");
+  }
+
+  /*
+  Callback Hell es la anidacion de funciones dentro de otras
+  Ej: se pide un producto y se actualiza ese producto
+  */
+  readAndUpdateConCallbackDependiente() {
+    this.productsService.getProductFromHeroku().subscribe(() => {
+      this.productsService.putProdutInHeroku().subscribe();
+    });
+  }
+  /*
+  Solucionar el Callback Hell en promesas es sencillo puesto el then se ejecuta despues del otro then, implementando el codigo en su argumento descrito
+  Ej:
+  funcion_de_promesa()
+  .then(//codigo_a_ejecutar)
+  .then(//codigo_a_ejecutar)
+  .then(//codigo_a_ejecutar)
+  .
+  .
+  .
+  */
+  /*
+  Para solucionar el Callback Hell en observables hay que:
+  1. import { switchMap } from 'rxjs/operators';
+  2. implementar el switchMap, coloca las funciones anidadas dentro de cada switchMap, logrando detener un solo subscribe
+  */
+  readAndUpdateSinCallbackDependiente(): void {
+    this.productsService.getProductFromHeroku()
+      .pipe(
+        switchMap(products => this.productsService.putProdutInHeroku()),
+        /*
+        switchMap(products => this.productsService.putProdutInHeroku()),
+        switchMap(products => this.productsService.putProdutInHeroku()),
+        .
+        .
+        .
+        */
+      )
+      .subscribe(res => {
+        // Codigo con el estado del ultimo suscribe o ultimo switchMap
+      });
+  }
+
+  /*
+  El caso anterior es un Callback con dependencia, puesto que para que se ejecute uno debe ejecutarse otro
+  Para un Callback sin dependencia tambien hay una estructura usada en Angular
+  Para promesas tenemos la funcion all que nos permite ejecutar varias promesas a la vez, sin que dependan una de otra
+  Ej:
+  Promise.all(doSomething1(), doSomething1());
+
+  Para observadores debemos usar un zip que nos permite usar dos observadores y resivir la respuesta de los dos al tiempo
+  Esta logica la podemos manejar desde un servicio puesto que es logica que se puede usar despues en otro compoenente
+  El servicio ahora retornaria un zip y en el compoenente nos suscribimos de una al zip
+  */
+  readAndUpdateSinCallbackIndependiente(): void {
+    /*
+    Agrupando observables en un mismo subscribe
+    Regresamos las respuestas en un arreglo que luego podemos consumir
+    */
+    zip(
+      this.productsService.getProductFromHeroku(),
+      this.productsService.putProdutInHeroku()
+    )
+      .subscribe(res => {
+        const get = res[0];
+        const update = res[1];
+      });
   }
 
 }
