@@ -135,8 +135,6 @@ export class ImgComponent implements OnInit {
   Promise.all(doSomething1(), doSomething1());
 
   Para observadores debemos usar un zip que nos permite usar dos observadores y resivir la respuesta de los dos al tiempo
-  Esta logica la podemos manejar desde un servicio puesto que es logica que se puede usar despues en otro compoenente
-  El servicio ahora retornaria un zip y en el compoenente nos suscribimos de una al zip
   */
   readAndUpdateSinCallbackIndependiente(): void {
     /*
@@ -152,5 +150,9 @@ export class ImgComponent implements OnInit {
         const update = res[1];
       });
   }
+  /*
+  Esta logica la podemos manejar desde un servicio puesto que es logica que se puede usar despues en otro compoenente
+  El servicio ahora retornaria un zip y en el componente nos suscribimos de una al zip
+  */
 
 }
