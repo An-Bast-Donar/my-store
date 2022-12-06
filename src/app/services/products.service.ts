@@ -131,7 +131,6 @@ export class ProductsService {
   /*
   Callback Hell
   Peticiones que dependen una de otra
-  En las promesas se evita con el .then o ejecutando con varios away
   */
 
 }
