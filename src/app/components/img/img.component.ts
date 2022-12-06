@@ -153,6 +153,7 @@ export class ImgComponent implements OnInit {
   /*
   Esta logica la podemos manejar desde un servicio puesto que es logica que se puede usar despues en otro compoenente
   El servicio ahora retornaria un zip y en el componente nos suscribimos de una al zip
+  Igual podemos estraer esta logica del switchMap en el servicio
   */
 
 }
