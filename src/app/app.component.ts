@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from './product.model';
+import { AuthService } from './services/autenticacion/auth.service';
+import { UsersService } from './services/autenticacion/users.service';
 
 /**
  * Decorador que indica a que template de html esta ligado, entre otras cosas
@@ -109,6 +111,18 @@ export class AppComponent {
       image: './assets/images/glasses.jpg'
     }
   ]
+
+  usuario = {
+    name: 'Juanito Escarcha',
+    email: 'Escarcha@mail.com',
+    password: '11221122'
+  }
+
+  constructor(
+    private usersService: UsersService,
+    private authService: AuthService
+  ) { }
+
   toggleButton() {
     this.person02.complete = !this.person02.complete;
   }
@@ -135,5 +149,37 @@ export class AppComponent {
   recibeSaludo(saludo: string) {
     console.log(saludo);
     console.log("se recibe un comunicado en el padre");
+  }
+
+  consultarUsuarios() {
+    this.usersService.getAll().subscribe(rta => {
+      console.log("todos los usuarios:", rta);
+    });
+  }
+
+  crearUsuario() {
+    this.usersService.create({
+      name: this.usuario.name,
+      email: this.usuario.email,
+      password: this.usuario.password
+    }).subscribe(rta => {
+      console.log("usuario nuevo creado:", rta);
+    });
+  }
+
+  autenticarme() {
+    this.authService.login(this.usuario.email, this.usuario.password).subscribe(rta => {
+      console.log("token de usuario autenticado:", rta);
+    });
+  }
+
+  consultarUsuarioAutenticado() {
+
+  }
+
+  autenticarmeAndConsultar() {
+    this.authService.loginAndGet(this.usuario.email, this.usuario.password).subscribe(rta => {
+      console.log("Autenticacion y datos del usuario autenticado:", rta);
+    });
   }
 }

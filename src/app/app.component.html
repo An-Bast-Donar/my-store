@@ -315,3 +315,18 @@
   componentes mediante el patron de observable</p>
 <app-txt></app-txt>
 <app-btn></app-btn>
+
+<hr>
+
+<!--
+========== PETICIONES JWT ==========
+- son consultas al back relacionadas con un Json Web Token
+-->
+<h2 class="tema">PETICIONES JWT</h2>
+<p class="descripcion">Son consultas al back relacionadas con un Json Web Token, que permite autenticarse en un servicio
+  especifico, dependiendo de la logica del negocio</p>
+<button (click)="consultarUsuarios()">Consultar todos los usuarios</button>
+<button (click)="crearUsuario()">Crear un usuario nuevo</button>
+<button (click)="autenticarme()">Autenticarme con el usuario nuevo</button>
+<button (click)="consultarUsuarioAutenticado()">Consultar usuario nuevo</button>
+<button (click)="autenticarmeAndConsultar()">Autenticarme y consultar usuario nuevo</button>

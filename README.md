@@ -46,6 +46,8 @@ Proyecto para aprender angular de Beginner a Master
 - pipes/reverse: bases sobre los pipes (explicado tambien en el app.component)
 - models/product: bases sobre creacion de interfaces
 - directives/highlight: bases sobre directivas (explicado tambien en el app.component)
+- services/autenticacion: servicion que explican un login con jwt, json web token
+- models/autenticacion: modelos para el servicio de autenticacion
 
 ## Debug
 
