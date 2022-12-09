@@ -27,6 +27,7 @@ export class TimeInterceptor implements HttpInterceptor {
     return next.handle(request)
       .pipe(
         // tap(), corre un proceso sin tener que cambiar o modificar la respuesta del observable
+        // este proceso se ejecuta antes de mostrar el resultado del observador, pero ya tiene la respuesta del observador
         tap(() => {
           const time = (performance.now() - start) + 'ms';
           console.log('respuesta y tiempo del interceptor:', request, time)
