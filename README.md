@@ -46,8 +46,9 @@ Proyecto para aprender angular de Beginner a Master
 - pipes/reverse: bases sobre los pipes (explicado tambien en el app.component)
 - models/product: bases sobre creacion de interfaces
 - directives/highlight: bases sobre directivas (explicado tambien en el app.component)
-- services/autenticacion: servicion que explican un login con jwt, json web token
+- services/autenticacion: servicios que explican un login con jwt, json web token
 - models/autenticacion: modelos para el servicio de autenticacion
+- interceptors: conceptos basicos sobre interceptores
 
 ## Debug
 
@@ -120,3 +121,7 @@ En angular se pueden tener N cantidad de ambientes, cada ambiente con sus propia
 ## Callback Hell
 
 Esta practica hay que evitarla, se presenta cuando una peticion depende de otra y se empiesa a anidar y a anidar peticiones dentro de peticiones.
+
+## Interceptores
+
+Codigo incrustado entre la aplicaicon y la comunicacion con el back para diferentes usos, se puede crear un interceptor con todas la logica que lo respalda con el comando: % ng g interceptor carpeta_de_interceptores/nombre_del_interceptor
