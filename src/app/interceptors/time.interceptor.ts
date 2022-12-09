@@ -6,32 +6,38 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+// Paquetes para darle contexto a un interceptor y permitir ejecutarlo solo en determinadas peticiones
+import { HttpContextToken, HttpContext } from '@angular/common/http';
 
 /*
-Los interceptores son inyectables pero diferente a los demas
-Por ejemplo, los interceptores no tiene el atributo providedIn: 'root'
-Debe tambien inyectarse en el appmodule de una forma especial
-Un interceptor intercepta todas las peticiones del aplicativo
+Contexto para saber cuando se ejecuta el interceptor
+Puede iniciar por defecto en false y cambiar a true o vicebersa
 */
+const CHECK_TIME = new HttpContextToken<boolean>(() => true);
+export function chechTime() {
+  return new HttpContext().set(CHECK_TIME, false);
+}
+
 @Injectable()
 export class TimeInterceptor implements HttpInterceptor {
 
   constructor() { }
 
-  /*
-  Funcion que se ejecuta cada que se intercepta una peticion
-  */
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    // Codigo a ejecutar en el interceptor
-    const start = performance.now();
-    return next.handle(request)
-      .pipe(
-        // tap(), corre un proceso sin tener que cambiar o modificar la respuesta del observable
-        // este proceso se ejecuta antes de mostrar el resultado del observador, pero ya tiene la respuesta del observador
-        tap(() => {
-          const time = (performance.now() - start) + 'ms';
-          console.log('respuesta y tiempo del interceptor:', request, time)
-        })
-      );
+    // Validacion del contexto para saber si intercepta o no una peticion
+    if (request.context.get(CHECK_TIME)) {
+      const start = performance.now();
+      return next.handle(request)
+        // codigo a ejecutar una vez enviada la peticion
+        .pipe(
+          // tap(), corre un proceso sin tener que cambiar o modificar la respuesta del observable
+          // este proceso se ejecuta antes de mostrar el resultado del observador, pero ya tiene la respuesta del observador
+          tap(() => {
+            const time = (performance.now() - start) + 'ms';
+            console.log('respuesta y tiempo del interceptor:', request, time)
+          })
+        );
+    }
+    return next.handle(request);
   }
 }

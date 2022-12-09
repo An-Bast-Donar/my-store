@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { chechTime } from '../interceptors/time.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,11 @@ export class ProductsService {
     return this.http.get(`https://fakestoreapi.com/products`);
   }
 
+  /*
+  En caso de que esta peticion necesite enviarle un contexto al interceptor, el contexto se envia por los parametros de la peticion
+  */
   getAllProductsFromHeroku() {
-    return this.http.get(`https://young-sands-07814.herokuapp.com/api/products`);
+    return this.http.get(`https://young-sands-07814.herokuapp.com/api/products`, { context: chechTime() });
   }
 
   getProductFromHeroku() {
