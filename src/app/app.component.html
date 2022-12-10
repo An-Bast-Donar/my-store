@@ -344,3 +344,8 @@
 <p>
   <button (click)="doenloadPDF()">Descargar PDF</button>
 </p>
+<p>
+  <label for="carga">Cargue un archivo: </label>
+  <input id="carga" type="file" (change)="onUpload($event)">
+  <img *ngIf="imgRta" [src]="imgRta">
+</p>

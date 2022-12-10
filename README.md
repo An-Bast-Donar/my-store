@@ -129,4 +129,5 @@ Codigo incrustado entre la aplicaicon y la comunicacion con el back para diferen
 
 ## Descargar y cargar de archivos
 
-Para gestionar esto en angular hay que importar la libreria file-saver que nos permite hacer descargar por medio de http, esta libreria la descargamos con: $ npm i file-saver, igualmente tenemos que descargar el tipadode los archivos de la siguiente manera: $ npm install @types/file-saver --save-dev
+- Para gestionar esto en angular hay que importar la libreria file-saver que nos permite hacer descargar por medio de http, esta libreria la descargamos con: $ npm i file-saver, igualmente tenemos que descargar el tipadode los archivos de la siguiente manera: $ npm install @types/file-saver --save-dev
+- La descarga de archivo es mediante una peticion comun a una API, pero la carga es una petiicion a una api donde los parametros enviados son binarios y no json
