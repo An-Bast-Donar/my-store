@@ -49,6 +49,7 @@ Proyecto para aprender angular de Beginner a Master
 - services/autenticacion: servicios que explican un login con jwt, json web token
 - models/autenticacion: modelos para el servicio de autenticacion
 - interceptors: conceptos basicos sobre interceptores
+- services/download: servicios para descargar y cargar archivos
 
 ## Debug
 
@@ -125,3 +126,7 @@ Esta practica hay que evitarla, se presenta cuando una peticion depende de otra 
 ## Interceptores
 
 Codigo incrustado entre la aplicaicon y la comunicacion con el back para diferentes usos, se puede crear un interceptor con todas la logica que lo respalda con el comando: % ng g interceptor carpeta_de_interceptores/nombre_del_interceptor
+
+## Descargar y cargar de archivos
+
+Para gestionar esto en angular hay que importar la libreria file-saver que nos permite hacer descargar por medio de http, esta libreria la descargamos con: $ npm i file-saver, igualmente tenemos que descargar el tipadode los archivos de la siguiente manera: $ npm install @types/file-saver --save-dev

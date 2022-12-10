@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from './product.model';
 import { AuthService } from './services/autenticacion/auth.service';
 import { UsersService } from './services/autenticacion/users.service';
+import { FilesService } from './services/download/files.service';
 
 /**
  * Decorador que indica a que template de html esta ligado, entre otras cosas
@@ -120,7 +121,8 @@ export class AppComponent {
 
   constructor(
     private usersService: UsersService,
-    private authService: AuthService
+    private authService: AuthService,
+    private filesService: FilesService,
   ) { }
 
   toggleButton() {
@@ -181,5 +183,15 @@ export class AppComponent {
     this.authService.loginAndGet(this.usuario.email, this.usuario.password).subscribe(rta => {
       console.log("Autenticacion y datos del usuario autenticado:", rta);
     });
+  }
+
+  /*
+  Nombre del PDF
+  Lugar del pdf, URL, ruta del proeycto, etc
+  Tipo del archivo
+  */
+  doenloadPDF() {
+    this.filesService.getFile('my.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
+      .subscribe()
   }
 }
