@@ -45,6 +45,10 @@
   }
 }
 
+.active{
+  border: 1px solid black;
+}
+
 /*media queries: consulta de medios, para responsive*/
 @media screen and (min-width: 600px){
   .products--grid {

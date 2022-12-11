@@ -18,6 +18,7 @@ export class AppComponent {
   img = 'assets/images/aprendiendocodigo.jpg';
   fecha = new Date();
   imgRta = '';
+  ids: number[] = [1, 2, 3, 4, 5];
   person01 = {
     name: 'Juan',
     age: 26,

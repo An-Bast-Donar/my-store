@@ -365,4 +365,16 @@
   enteras son llamadas mediante la etiqueta router-outlet que se encarga de renderizar uno u otro componente dependiendo
   de la url especifica en el navegador, normalmente en el app.component se hace el llamado a la etiqeta router-outlet
 </p>
+<!--
+- La forma de navegar a otras rutas es con el atributo routerLink
+- La forma de agregar una clase a una ruta, dependiendo si se esta renderizando o no es con el atributo routerLinkActive
+-->
+<a routerLink="home">Home</a>
+<br>
+<a *ngFor="let id of ids" routerLink="catalogo/{{id}}" routerLinkActive="active">Catalogo</a>
+<br>
+<a routerLink="login">Login</a>
+<br>
+<a routerLink="register">Register</a>
+<br>
 <router-outlet></router-outlet>
