@@ -50,6 +50,7 @@ Proyecto para aprender angular de Beginner a Master
 - models/autenticacion: modelos para el servicio de autenticacion
 - interceptors: conceptos basicos sobre interceptores
 - services/download: servicios para descargar y cargar archivos
+- pages: carpeta donde estan guardadas las paginas de la aplicaciones
 
 ## Debug
 
@@ -131,3 +132,8 @@ Codigo incrustado entre la aplicaicon y la comunicacion con el back para diferen
 
 - Para gestionar esto en angular hay que importar la libreria file-saver que nos permite hacer descargar por medio de http, esta libreria la descargamos con: $ npm i file-saver, igualmente tenemos que descargar el tipadode los archivos de la siguiente manera: $ npm install @types/file-saver --save-dev
 - La descarga de archivo es mediante una peticion comun a una API, pero la carga es una petiicion a una api donde los parametros enviados son binarios y no json
+
+## Routing
+
+- El routing de la aplicacion contiene las paginas que se van a mostrar dependienddo de la url en el navegador, las paginas son componentes y se crean igual que un componente solo que tienen comumente su ruta de acceso en el routing y abarcan toda una pagina en el proyecto, los componentes son usados por las paginas.
+- Para crear una pagina y toda la logia que la respalda se hace igual que un componente: $ ng g c ruta/nombre_pagina

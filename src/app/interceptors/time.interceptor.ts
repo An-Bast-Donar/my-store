@@ -13,9 +13,9 @@ import { HttpContextToken, HttpContext } from '@angular/common/http';
 Contexto para saber cuando se ejecuta el interceptor
 Puede iniciar por defecto en false y cambiar a true o vicebersa
 */
-const CHECK_TIME = new HttpContextToken<boolean>(() => true);
+const CHECK_TIME = new HttpContextToken<boolean>(() => false);
 export function chechTime() {
-  return new HttpContext().set(CHECK_TIME, false);
+  return new HttpContext().set(CHECK_TIME, true);
 }
 
 @Injectable()
