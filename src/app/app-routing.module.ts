@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './pages/category/category.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MyCardComponent } from './pages/my-card/my-card.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 /*
 Arreglos que referencia una url con su pagina en la aplicacion
@@ -25,9 +30,32 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
+  /*
+  Enviar paramaetros por url
+  */
   {
-    path: 'catalogo',
+    path: 'catalogo/:id',
     component: CategoryComponent
+  },
+  {
+    path: 'my-cart',
+    component: MyCardComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'recovery',
+    component: RecoveryComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   }
 ];
 
