@@ -8,13 +8,26 @@ Arreglos que referencia una url con su pagina en la aplicacion
 Ej de url: http://localhost:4200/catalogo
 */
 const routes: Routes = [
+  /*
+  // path: '', define el compoenente que se carga por defecto, sin ruta en la url
+  // la ruta por defecto tambien se puede llevar acabo con un redirect, que es como se implementa en este proyecto
   {
-    path: 'catalogo',
-    component: CategoryComponent
+    path: '',
+    component: HomeComponent
+  },
+  */
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'catalogo',
+    component: CategoryComponent
   }
 ];
 
