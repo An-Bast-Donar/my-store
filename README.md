@@ -51,6 +51,7 @@ Proyecto para aprender angular de Beginner a Master
 - interceptors: conceptos basicos sobre interceptores
 - services/download: servicios para descargar y cargar archivos
 - pages: carpeta donde estan guardadas las paginas de la aplicaciones
+- app-routing.module: archivo donde se referencia cada componente(pagina) con su url
 
 ## Debug
 
