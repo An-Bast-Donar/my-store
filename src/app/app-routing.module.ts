@@ -4,6 +4,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MyCardComponent } from './pages/my-card/my-card.component';
+import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -56,6 +57,14 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+  },
+  /*
+  Cuando no encuentra nada, carga este componenete
+  La abreviacion para cuando no encuentre nada es: **
+  */
+  {
+    path: '**',
+    component: NoFoundComponent,
   }
 ];
 
