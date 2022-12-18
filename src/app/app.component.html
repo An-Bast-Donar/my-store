@@ -368,10 +368,13 @@
 <!--
 - La forma de navegar a otras rutas es con el atributo routerLink
 - La forma de agregar una clase a una ruta, dependiendo si se esta renderizando o no es con el atributo routerLinkActive
+- Las rutas tambien reciben parametros por url opcionales, estos son los que van despues del signo ?, estos parametros se envian con el atributo queryParams
+Ej: localhost:4200/home?product=1
 -->
 <a routerLink="home">Home</a>
 <br>
-<a *ngFor="let id of ids" routerLink="catalogo/{{id}}" routerLinkActive="active">Catalogo</a>
+<a *ngFor="let id of ids" routerLink="catalogo/{{id}}" routerLinkActive="active"
+  [queryParams]="{product: id*10, descripcion: 'prueba'+id}">Catalogo</a>
 <br>
 <a routerLink="login">Login</a>
 <br>
