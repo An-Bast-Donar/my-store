@@ -1,0 +1,4 @@
+- Los modulos son carpetas que en su interior pueden contener compoennte, paginas entre otras caracteristicas de angular
+- Para crear un modulo y todo el codigo que lo respalda hay que ejecutar la linea $ ng g m nombre_modulo --routing
+- Los modulos independientes son llamados normalmente dentro del modulo general y dentro de cada modulo independiente existen las cargas de paginas y componentes espesificos de ese modulo
+- Para este proyecto podemos cargar este modulo mediante la ruta: http://localhost:4200/cms

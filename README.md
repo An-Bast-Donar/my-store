@@ -53,6 +53,7 @@ Proyecto para aprender angular de Beginner a Master
 - pages: carpeta donde estan guardadas las paginas de la aplicaciones
 - app-routing.module: archivo donde se referencia cada componente (pagina) con su url
 - app.module.ts: archivo que define el modulo principal y la integracion con los demas modulos
+- cms: modulo de la aplicacion
 
 ## Debug
 

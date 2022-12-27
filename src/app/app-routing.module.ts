@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CmsModule } from './cms/cms.module';
 import { CategoryComponent } from './pages/category/category.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -59,7 +60,15 @@ const routes: Routes = [
     component: ProfileComponent,
   },
   /*
+    Importar la carga de un modulo Lazy Loading
+    */
+  {
+    path: 'cms',
+    loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
+  },
+  /*
   Cuando no encuentra nada, carga este componenete
+  Este instruccion debe ir de ultima en la lista de url
   La abreviacion para cuando no encuentre nada es: **
   */
   {
