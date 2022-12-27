@@ -25,7 +25,15 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
 
+/*
+- El decorador NgModule declara el manejador del modulo
+- Un puede crear sus propios modulos o importar modulos del mismo angular o de terceros
+- Los mudulos son compuestos por paginas, componentes, pipes, directivas, entre otras cosas
+- Existen varios tipos de modulos como root, core, routing, feature/domain, shared moudule
+- Los servicios si se pueden usar en diferentes modulos
+*/
 @NgModule({
+  // Declaramos componentes, pipes y directivas
   declarations: [
     AppComponent,
     ImgComponent,
@@ -42,17 +50,21 @@ import { RegisterComponent } from './pages/register/register.component';
     RecoveryComponent,
     RegisterComponent
   ],
+  // Importacion de modulos
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
   ],
-  // Declaramos nuestro nuesvo provider y nuestro interceptor
+  // Declaramos nuestro nuesvo provider (servicios) y nuestro interceptor
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  // Componente de inicio
+  bootstrap: [AppComponent],
+  // Si queremos que nuestro modulo comparata caracteristicas a otros modulos los declaramos aca
+  exports: []
 })
 export class AppModule { }

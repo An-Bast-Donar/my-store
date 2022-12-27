@@ -52,6 +52,7 @@ Proyecto para aprender angular de Beginner a Master
 - services/download: servicios para descargar y cargar archivos
 - pages: carpeta donde estan guardadas las paginas de la aplicaciones
 - app-routing.module: archivo donde se referencia cada componente (pagina) con su url
+- app.module.ts: archivo que define el modulo principal y la integracion con los demas modulos
 
 ## Debug
 
