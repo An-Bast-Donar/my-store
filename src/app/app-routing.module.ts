@@ -9,6 +9,7 @@ import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { CustomPreloadService } from './services/custom-preload.service';
 
 /*
 Arreglos que referencia una url con su pagina en la aplicacion
@@ -60,11 +61,16 @@ const routes: Routes = [
     component: ProfileComponent,
   },
   /*
-    Importar la carga de un modulo Lazy Loading
-    */
+  Importar la carga de un modulo Lazy Loading
+  */
   {
     path: 'cms',
-    loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
+    loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule),
+    /*
+    Cada modulo que queramos que precargue le añadimos:
+    data: { preload: true }
+    */
+    data: { preload: true }
   },
   /*
   Cuando no encuentra nada, carga este componenete
@@ -80,10 +86,15 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     /*
-    para la precarga de todos los modulos
-    import { PreloadAllModules } from '@angular/router';
+    para la precarga de todos los modulos necesitamos:
+    1. import { PreloadAllModules } from '@angular/router';
+    2. preloadingStrategy: PreloadAllModules
     */
-    preloadingStrategy: PreloadAllModules
+    /*
+    si el sistema de precarga es personalizado llamados otra estrategia de precarga
+    ej: preloadingStrategy: CustomPreloadService
+    */
+    preloadingStrategy: CustomPreloadService,
   })],
   exports: [RouterModule]
 })

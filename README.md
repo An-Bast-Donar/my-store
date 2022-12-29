@@ -54,6 +54,7 @@ Proyecto para aprender angular de Beginner a Master
 - app-routing.module: archivo donde se referencia cada componente (pagina) con su url
 - app.module.ts: archivo que define el modulo principal y la integracion con los demas modulos
 - cms: modulo de la aplicacion
+- services/custom-preload: estrategia personalizada de carga de modulos
 
 ## Debug
 
