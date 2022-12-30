@@ -153,3 +153,7 @@ Los Guards son clases que protegen las rutas, existen 4 tipos de guardianes dife
 - (CanLoad) Antes de cargar los recursos (assets) de la ruta.
 - (CanDeactivate) Antes de intentar salir de la ruta actual (usualmente utilizado para evitar salir de una ruta, si no se han guardado los datos).
 - (CanActivateChild) Antes de cargar las rutas hijas de la ruta actual.
+
+## Deploy con Netlify
+
+Plataforma que permite lazar aplicaciones en ambiente productivo u otro, dependiendo de a que rama se realize un merge o push en github u otras plataformas de versionamiento de codigo, dentro de la plataforma se selecciona la rama que queremos lanzar y los comandos qeu queremos correr al momento de actualizar dicha rama
