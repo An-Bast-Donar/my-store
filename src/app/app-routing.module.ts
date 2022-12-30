@@ -12,6 +12,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CustomPreloadService } from './services/custom-preload.service';
 import { QuicklinkStrategy } from 'ngx-quicklink'
 import { AuthGuard } from './guards/auth.guard';
+import { ExitGuard } from './guards/exit.guard';
 
 
 /*
@@ -45,6 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'my-cart',
+    canDeactivate: [ExitGuard],
     component: MyCardComponent,
   },
   {

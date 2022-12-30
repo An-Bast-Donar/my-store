@@ -55,7 +55,8 @@ Proyecto para aprender angular de Beginner a Master
 - app.module.ts: archivo que define el modulo principal y la integracion con los demas modulos
 - cms: modulo de la aplicacion
 - services/custom-preload: estrategia personalizada de carga de modulos
-- guards/auth: bases sobre los guards
+- guards/auth: bases sobre guard canActive
+- guards/exit: bases sobre guard canDesactive
 
 ## Debug
 
