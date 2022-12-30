@@ -24,6 +24,7 @@ import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { QuicklinkModule } from 'ngx-quicklink'
 
 /*
 - El decorador NgModule declara el manejador del modulo
@@ -56,6 +57,7 @@ import { RegisterComponent } from './pages/register/register.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    QuicklinkModule,
   ],
   // Declaramos nuestro nuesvo provider (servicios) y nuestro interceptor
   providers: [

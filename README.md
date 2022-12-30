@@ -115,6 +115,7 @@ Aplicar buenas practicas de angular de forma sistematizada, angular tiene una gu
 ## Librerias comunes
 
 - Swiper: libreria para realizar sliders, se instala con $ npm i swiper en nuestro proyecto angular, se importa el modulo SwiperModule en el app.module.ts y se importan los estilos en el archivo base de estilos styles esta libreria tiene su respectiva documentacion de instalacion y uso en su portal web de internet
+- ngx-quickilink: libreria para precargar modulos segun los links que aparezcan en pantalla, se instala con $ npm i ngx-quicklink --save, y se deben realizar las importaciones correspondientes en los archivos involucrados
 
 ## Modelos
 

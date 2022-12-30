@@ -10,6 +10,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CustomPreloadService } from './services/custom-preload.service';
+import { QuicklinkStrategy } from 'ngx-quicklink'
+
 
 /*
 Arreglos que referencia una url con su pagina en la aplicacion
@@ -93,6 +95,12 @@ const routes: Routes = [
     /*
     si el sistema de precarga es personalizado llamados otra estrategia de precarga
     ej: preloadingStrategy: CustomPreloadService
+    */
+    /*
+    si queremos habilitar la estrategia de carga segun los links en pantalla, podemos usar
+    preloadingStrategy: QuicklinkStrategy
+    de la libreria ngx-quicklink
+    si hay submodulos, hay que habilitar en cada modulo la estrategia de precarla
     */
     preloadingStrategy: CustomPreloadService,
   })],
