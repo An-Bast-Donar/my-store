@@ -55,6 +55,7 @@ Proyecto para aprender angular de Beginner a Master
 - app.module.ts: archivo que define el modulo principal y la integracion con los demas modulos
 - cms: modulo de la aplicacion
 - services/custom-preload: estrategia personalizada de carga de modulos
+- guards/auth: bases sobre los guards
 
 ## Debug
 
@@ -142,3 +143,12 @@ Codigo incrustado entre la aplicaicon y la comunicacion con el back para diferen
 
 - El routing de la aplicacion contiene las paginas que se van a mostrar dependienddo de la url en el navegador, las paginas son componentes y se crean igual que un componente solo que tienen comumente su ruta de acceso en el routing y abarcan toda una pagina en el proyecto, los componentes son usados por las paginas.
 - Para crear una pagina y toda la logia que la respalda se hace igual que un componente: $ ng g c ruta/nombre_pagina
+
+## Guardianes
+
+Los Guards son clases que protegen las rutas, existen 4 tipos de guardianes diferentes, cada clase puede implementar varios guardianes, para crear un guard y todo el codigo que lo respalda ejecutamos: $ ng g g ruta/nombre_gel_guard, y posteriormente seleccionamos los guard o validaciones que queremos hacer en ese archivo, los tipos de guards son:
+
+- (CanActivate) Antes de cargar los componentes de la ruta.
+- (CanLoad) Antes de cargar los recursos (assets) de la ruta.
+- (CanDeactivate) Antes de intentar salir de la ruta actual (usualmente utilizado para evitar salir de una ruta, si no se han guardado los datos).
+- (CanActivateChild) Antes de cargar las rutas hijas de la ruta actual.

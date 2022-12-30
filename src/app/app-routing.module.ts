@@ -11,6 +11,7 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CustomPreloadService } from './services/custom-preload.service';
 import { QuicklinkStrategy } from 'ngx-quicklink'
+import { AuthGuard } from './guards/auth.guard';
 
 
 /*
@@ -60,6 +61,10 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    /*
+    Forma de aplicar guardianes a las rutas
+    */
+    canActivate: [AuthGuard],
     component: ProfileComponent,
   },
   /*
