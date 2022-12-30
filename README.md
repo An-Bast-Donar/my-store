@@ -157,3 +157,8 @@ Los Guards son clases que protegen las rutas, existen 4 tipos de guardianes dife
 ## Deploy con Netlify
 
 Plataforma que permite lazar aplicaciones en ambiente productivo u otro, dependiendo de a que rama se realize un merge o push en github u otras plataformas de versionamiento de codigo, dentro de la plataforma se selecciona la rama que queremos lanzar y los comandos qeu queremos correr al momento de actualizar dicha rama, este metodo de lanzamiento tambien tiene su archivo de configuracion en netlify.toml donde se desccribe que comandos se ejecutan, donde se redireccionan las url, entre otras cosas
+
+## Bundle Size
+
+- Esto es el peso de la aplicacion, para mejorarlo hay que aplicar buenas practicas de modularizacion, carga, pregarga, lazyloading, Tree shaking, Webpack Bundle Analyzer, entre otros
+- Para un primer analicis del codigo podemos usar Webpack Bundle Analyzer, para esto instalamos este complemento con: $ npm install webpack-bundle-analyzer --save-dev, posteriormente generamos una aplicacion de produccion pero con una bandera que nos genera un archivo de estadisticas del proyecto: $ ng build --stats-json, este archivo se genera dentro de la carpeta dist con el nombre stats.json, posteriormente corremos el paquete de nuestor compoennete de analiticas y lo referenciamos a nuestro archivo de estadisticas: $ npx webpack-bundle-analyzer dist/my-store/stats.json, por ultimo podemos abrir el link que este comando nos proporciona y visualizar la primera analitica de nuestra aplicacion
