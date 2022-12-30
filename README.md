@@ -20,7 +20,7 @@ Proyecto para aprender angular de Beginner a Master
 2. correr proeycto y abrirlo automaticamente: $ ng serve -o
 3. correr proeycto abrirlo automaticamente y cambiar el puerto: $ ng serve -o --port=3500
 
-## Estructura del un proyecto
+## Estructura de un proyecto
 
 - src: corazon de la aplicacion, componentes, html, css, routin, entre otras cosas.
 - .browserslistrc: le indica a angular en que navegadores debe ser compatible la aplicacion.
