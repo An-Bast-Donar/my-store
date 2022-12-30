@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { Product } from './product.model';
 import { AuthService } from './services/autenticacion/auth.service';
 import { UsersService } from './services/autenticacion/users.service';
 import { FilesService } from './services/download/files.service';
+
+/*
+dependiendo de la version de google analityc usada, podemos o no declarar este username
+declare var gtag;
+*/
 
 /**
  * Decorador que indica a que template de html esta ligado, entre otras cosas
@@ -125,7 +132,16 @@ export class AppComponent {
     private usersService: UsersService,
     private authService: AuthService,
     private filesService: FilesService,
-  ) { }
+    private router: Router,
+  ) {
+    /*
+    //Dependiendo o no de la version de google analityc usada debemos cambiar la forma en la que enviamos los datos a google
+    const navEndEvents$ = this.router.events.pipe(filter(event => event instanceof NavigationEnd));
+    navEndEvents$.subscribe((event: NavigationEnd) => {
+      gtag('config', 'G-VB4YFH88HR', { page_path: event.urlAfterRedirects });
+    });
+    */
+  }
 
   toggleButton() {
     this.person02.complete = !this.person02.complete;

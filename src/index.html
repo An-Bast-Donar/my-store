@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>MyStore</title>
@@ -7,7 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
   <app-root></app-root>
+  <!--
+  Codigo insertado de google analitycs
+  Se requiere entrar a google, crear un flujo de analiticas para la url que vamos a observar y pegar aca el fragmento de codigo que google nos proporciona
+  Este proceso puede cambiar dependiendo de la version de google analityc usada
+  -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VB4YFH88HR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    //Esta linea se cambia pues se le da otra funcionalidad en el app.component.ts
+    //gtag('config', 'G-VB4YFH88HR');
+  </script>
 </body>
+
 </html>
