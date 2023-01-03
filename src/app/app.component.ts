@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { Product } from './product.model';
@@ -220,4 +220,29 @@ export class AppComponent {
       this.filesService.uploadFile(file).subscribe(rta => this.imgRta = rta.location)
     }
   }
+
+  /*
+  Codigo para instalacion de la web como si fuera nativa PWA
+  */
+  installEvent: any = null;
+  @HostListener('window: beforeinstallprompt', ['$event'])
+  onBeforeInstallPrompt(event: Event) {
+    console.log(event);
+    event.preventDefault();
+    this.installEvent = event;
+  }
+  installByUser() {
+    if (this.installEvent) {
+      this.installEvent.prompt();
+      this.installEvent.userChoice
+        .then((rta: any) => {
+          if (rta.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+        });
+    }
+  }
+
 }
