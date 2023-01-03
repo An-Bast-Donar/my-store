@@ -156,7 +156,7 @@ Los Guards son clases que protegen las rutas, existen 4 tipos de guardianes dife
 
 ## Deploy con Netlify
 
-Plataforma que permite lazar aplicaciones en ambiente productivo u otro, dependiendo de a que rama se realize un merge o push en github u otras plataformas de versionamiento de codigo, dentro de la plataforma se selecciona la rama que queremos lanzar y los comandos qeu queremos correr al momento de actualizar dicha rama, este metodo de lanzamiento tambien tiene su archivo de configuracion en netlify.toml donde se desccribe que comandos se ejecutan, donde se redireccionan las url, entre otras cosas
+Plataforma que permite lazar aplicaciones en ambiente productivo u otro, dependiendo de a que rama se realize un merge o push en github u otras plataformas de versionamiento de codigo, dentro de la plataforma se selecciona la rama que queremos lanzar y los comandos qeu queremos correr al momento de actualizar dicha rama, este metodo de lanzamiento tambien tiene su archivo de configuracion en netlify.toml donde se desccribe que comandos se ejecutan, donde se redireccionan las url, entre otras cosas. Este proyecto se puede visualizar tambien en https://gorgeous-lolly-juancursocol.netlify.app/
 
 ## Bundle Size
 
