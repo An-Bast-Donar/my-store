@@ -57,12 +57,13 @@ Proyecto para aprender angular de Beginner a Master
 - services/custom-preload: estrategia personalizada de carga de modulos
 - guards/auth: bases sobre guard canActive
 - guards/exit: bases sobre guard canDesactive
+- components/form-control: componente con las bases sobre formularios reactivos
 
 ## Debug
 
 Existe la extension Angular DevTools para Chrome, nos avisa que webs estan construidas en angular y nos habilita mas opciones en el inspector para debuguear diferentes aspectos de una web en esta tecnologia
 
-## Deployment
+## Deployment con Firebase
 
 1. Lanzamiento de la aplicacion a un ambiente productivo, mediante firebase hosting
 2. Para firebase hosting se requiere un gmail

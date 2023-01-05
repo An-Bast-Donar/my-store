@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // modulo para usar ngModule y formularios
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // modulo para realizar peticiones a una API
 import { HttpClientModule } from '@angular/common/http';
 // modulo llamado para poder declarar nuestros interceptores en el appmodule
@@ -24,7 +24,8 @@ import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { QuicklinkModule } from 'ngx-quicklink'
+import { QuicklinkModule } from 'ngx-quicklink';
+import { FormControlComponent } from './components/form-control/form-control.component'
 
 /*
 - El decorador NgModule declara el manejador del modulo
@@ -49,12 +50,14 @@ import { QuicklinkModule } from 'ngx-quicklink'
     NoFoundComponent,
     ProfileComponent,
     RecoveryComponent,
-    RegisterComponent
+    RegisterComponent,
+    FormControlComponent
   ],
   // Importacion de modulos
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     QuicklinkModule,
