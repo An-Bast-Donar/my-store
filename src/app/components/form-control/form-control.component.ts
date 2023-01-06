@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -31,10 +31,35 @@ export class FormControlComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
   });
 
-  constructor() { }
+  /*
+  Angular ya cuenta con diferetntes validadores para los formulario
+  */
+  formulario: FormGroup = this.formBuilder.group({
+    name: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(/^[a-zA-Z ]+$/)]],
+    email: ['', Validators.email],
+    phone: [''],
+    color: ['#000000'],
+    date: [''],
+    age: [18, [Validators.min(18), Validators.max(100)]],
+    category: [''],
+    tag: [''],
+    agree: [false, [Validators.requiredTrue]],
+    gender: [''],
+    zone: [''],
+  });;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.nameField.valueChanges
+      .subscribe(value => {
+        console.log(value);
+      });
+    this.form.valueChanges
+      .subscribe(value => {
+        console.log(value);
+      });
+    this.formulario.valueChanges
       .subscribe(value => {
         console.log(value);
       });
@@ -66,10 +91,33 @@ export class FormControlComponent implements OnInit {
     return this.nameForm?.touched && this.nameForm?.invalid;
   }
   getNameFormdValue() {
-    console.log(this.nameField.value);
+    console.log(this.nameForm?.value);
   }
   save() {
     console.log(this.form.value);
+  }
+
+  /*
+  Ejemplo form con formbuilder
+  */
+  get nameFormmulario() {
+    return this.formulario.get('name');
+  }
+  get isNameFormularioValid() {
+    return this.nameFormmulario?.touched && this.nameFormmulario?.valid;
+  }
+  get isNameFormularioInvalid() {
+    return this.nameFormmulario?.touched && this.nameFormmulario?.invalid;
+  }
+  getNameFormularioValue() {
+    console.log(this.nameFormmulario?.value);
+  }
+  saveFormulario() {
+    if (this.formulario.valid) {
+      console.log(this.formulario.value);
+    } else {
+      this.formulario.markAllAsTouched();
+    }
   }
 
 }
