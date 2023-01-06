@@ -1,13 +1,14 @@
 <p>
   Name: {{ nameField.value }}
-  <input type="text" [formControl]="nameField" />
-  <button [disabled]="nameField.invalid" (click)="getNameValue()">Get value</button>
+  <input [class.is-valid]="isNameFieldValid" [class.is-invalid]="isNameFieldInvalid" type="text"
+    [formControl]="nameField" />
+  <button [disabled]="nameField.invalid" (click)="getNameFieldValue()">Get value</button>
   <strong *ngIf="nameField.touched && nameField.hasError('required')">Este campo es requerido</strong>
   <!--
   - desde el html se puedem consultar validaciones especificas de cada campo para mosrar un mensaje dependiendo de cada una
   - hay que tener envuenta que desde el html se hacen validaciones a los campos pero se deben escribir el nombre de cada validacion todo en minuscula
   -->
-  <strong *ngIf="nameField.touched && nameField.hasError('maxlength')">debe tener maximo 10 c</strong>
+  <strong *ngIf="nameField.touched && nameField.hasError('maxlength')">debe tener maximo 10 caracteres</strong>
 </p>
 
 <p>
@@ -84,3 +85,18 @@
     Zona 3
   </label>
 </p>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+  <p>
+    Name: {{ nameForm?.value }} {{ nameForm?.valid }}
+    <input [class.is-valid]="isNameFormdValid" [class.is-invalid]="isNameFormInvalid" type="text"
+      formControlName="name" />
+    <button [disabled]="nameForm?.invalid" (click)="getNameFormdValue()">Get value</button>
+    <!-- <code>
+      <pre>{{ nameField | json }}</pre>
+    </code> -->
+  </p>
+  <p>
+    <button type="submit">Enviar</button>
+  </p>
+</form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -27,6 +27,10 @@ export class FormControlComponent implements OnInit {
   genderField = new FormControl('');
   zoneField = new FormControl('');
 
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+  });
+
   constructor() { }
 
   ngOnInit(): void {
@@ -36,8 +40,36 @@ export class FormControlComponent implements OnInit {
       });
   }
 
-  getNameValue() {
+  /*
+  Ejemplos para formControl
+  */
+  get isNameFieldValid() {
+    return this.nameField.touched && this.nameField.valid;
+  }
+  get isNameFieldInvalid() {
+    return this.nameField.touched && this.nameField.invalid;
+  }
+  getNameFieldValue() {
     console.log(this.nameField.value);
+  }
+
+  /*
+  Ejemplos para formGroup
+  */
+  get nameForm() {
+    return this.form.get('name');
+  }
+  get isNameFormdValid() {
+    return this.nameForm?.touched && this.nameForm?.valid;
+  }
+  get isNameFormInvalid() {
+    return this.nameForm?.touched && this.nameForm?.invalid;
+  }
+  getNameFormdValue() {
+    console.log(this.nameField.value);
+  }
+  save() {
+    console.log(this.form.value);
   }
 
 }
