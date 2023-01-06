@@ -48,6 +48,27 @@ export class FormControlComponent implements OnInit {
     zone: [''],
   });;
 
+
+  /*
+  Se pueden anidar formularios
+  */
+  formularioAnidado: FormGroup = this.formBuilder.group({
+    fullName: this.formBuilder.group({
+      name: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(/^[a-zA-Z ]+$/)]],
+      last: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(/^[a-zA-Z ]+$/)]]
+    }),
+    email: ['', Validators.email],
+    phone: [''],
+    color: ['#000000'],
+    date: [''],
+    age: [18, [Validators.min(18), Validators.max(100)]],
+    category: [''],
+    tag: [''],
+    agree: [false, [Validators.requiredTrue]],
+    gender: [''],
+    zone: [''],
+  });
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -118,6 +139,19 @@ export class FormControlComponent implements OnInit {
     } else {
       this.formulario.markAllAsTouched();
     }
+  }
+
+  /*
+  Forma de llamar a los formularios anidados
+  */
+  get nameAnidado() {
+    return this.formularioAnidado.get('fullName.name');
+  }
+  get isNameAnidadoValid() {
+    return this.nameAnidado?.touched && this.nameAnidado?.valid;
+  }
+  get isNameAnidadoInvalid() {
+    return this.nameAnidado?.touched && this.nameAnidado?.invalid;
   }
 
 }
