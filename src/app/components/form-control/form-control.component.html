@@ -1,3 +1,5 @@
+<!--Variables sueltas-->
+<h3>Variables sueltas</h3>
 <p>
   Name: {{ nameField.value }}
   <input [class.is-valid]="isNameFieldValid" [class.is-invalid]="isNameFieldInvalid" type="text"
@@ -86,6 +88,8 @@
   </label>
 </p>
 
+<!--Variables en un formulario-->
+<h3>Variables en un formulario</h3>
 <form [formGroup]="form" (ngSubmit)="save()">
   <p>
     Name: {{ nameForm?.value }} {{ nameForm?.valid }}
@@ -101,6 +105,8 @@
   </p>
 </form>
 
+<!--Variables en un formulario anidado-->
+<h3>Variables en un formulario anidado</h3>
 <form [formGroup]="formulario" (ngSubmit)="saveFormulario()">
   <p>
     Name: {{ nameFormmulario?.value }} {{ nameFormmulario?.valid }}
@@ -112,3 +118,34 @@
     <button type="submit">Enviar</button>
   </p>
 </form>
+
+<!--Variables sueltas en un formulario-->
+<h3>Variables sueltas en un formulario</h3>
+<form #formu="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" name="name" class="form-control" ngModel />
+  </div>
+  <button class="btn btn-primary">Enviar</button>
+</form>
+<p>{{ formu.value | json }}</p>
+
+<!--Variables referenciadas-->
+<h3>Variables referenciadas en un formulario</h3>
+<form #formul="ngForm" (ngSubmit)="onSubmit(formul)">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" name="name" class="form-control" type="text" #classtestprueba01 #classtestprueba02="ngModel"
+      [(ngModel)]="formul.name" />
+  </div>
+  <button class="btn btn-primary">Enviar</button>
+</form>
+<!--Estos datos tambien pueden usarse desde el css y aceder a cada imput dependiendo del estado en el que se encuentre-->
+<p>{{ formul.value | json }}</p>
+<p>NAME: {{ classtestprueba01.className }}</p>
+<p>dirty: {{classtestprueba02.dirty}}</p>
+<p>pristine: {{classtestprueba02.pristine}}</p>
+<p>touched: {{classtestprueba02.touched}}</p>
+<p>untouched: {{classtestprueba02.untouched}}</p>
+<p>valid: {{classtestprueba02.valid}}</p>
+<p>invalid: {{classtestprueba02.invalid}}</p>

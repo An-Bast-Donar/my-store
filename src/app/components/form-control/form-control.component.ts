@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -30,6 +30,10 @@ export class FormControlComponent implements OnInit {
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
   });
+
+  formul = {
+    name: 'Milton'
+  };
 
   /*
   Angular ya cuenta con diferetntes validadores para los formulario
@@ -152,6 +156,10 @@ export class FormControlComponent implements OnInit {
   }
   get isNameAnidadoInvalid() {
     return this.nameAnidado?.touched && this.nameAnidado?.invalid;
+  }
+
+  onSubmit(formul: NgForm) {
+    console.log('in onSubmit: ', formul.valid);
   }
 
 }
