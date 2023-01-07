@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder, NgForm, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -52,7 +52,6 @@ export class FormControlComponent implements OnInit {
     zone: [''],
   });;
 
-
   /*
   Se pueden anidar formularios
   */
@@ -71,6 +70,13 @@ export class FormControlComponent implements OnInit {
     agree: [false, [Validators.requiredTrue]],
     gender: [''],
     zone: [''],
+  });
+
+  /*
+  Formulario con arrays
+  */
+  formularioArray = this.formBuilder.group({
+    addresses: this.formBuilder.array([this.buildAddress()])
   });
 
   constructor(private formBuilder: FormBuilder) { }
@@ -159,7 +165,28 @@ export class FormControlComponent implements OnInit {
   }
 
   onSubmit(formul: NgForm) {
-    console.log('in onSubmit: ', formul.valid);
+    console.log('in onSubmit: ', formul.name, formul.value, formul.valid);
+  }
+
+  /*
+  Ejemplo de romulario con array
+  */
+  addAddress(): void {
+    this.addresses.push(this.buildAddress());
+  }
+
+  buildAddress(): FormGroup {
+    return this.formBuilder.group({
+      street: ['', Validators.required]
+    });
+  }
+
+  get addresses(): FormArray {
+    return this.formularioArray.get('addresses') as FormArray;
+  }
+
+  onSubmitArray(formularioArray: FormGroup) {
+    console.log('in onSubmitArray: ', formularioArray.value, formularioArray.valid);
   }
 
 }

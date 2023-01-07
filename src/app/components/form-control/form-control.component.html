@@ -149,3 +149,18 @@
 <p>untouched: {{classtestprueba02.untouched}}</p>
 <p>valid: {{classtestprueba02.valid}}</p>
 <p>invalid: {{classtestprueba02.invalid}}</p>
+
+<!--Variables con arrays-->
+<h3>Formulario con arrays</h3>
+<form [formGroup]="formularioArray" (ngSubmit)="onSubmitArray(formularioArray)">
+  <div formArrayName="addresses">
+    <div [formGroupName]="indice" *ngFor="let direccion of addresses.controls; let indice=index">
+      <label>direccion {{indice+1}} :</label>
+      <input type="text" formControlName="street" />
+    </div>
+  </div>
+  <button (click)="addAddress()">
+    + Añadir
+  </button>
+  <button class="btn btn-primary">Enviar</button>
+</form>
