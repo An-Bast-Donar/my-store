@@ -26,6 +26,8 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { QuicklinkModule } from 'ngx-quicklink';
 import { FormControlComponent } from './components/form-control/form-control.component'
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material';
 
 /*
 - El decorador NgModule declara el manejador del modulo
@@ -61,6 +63,8 @@ import { FormControlComponent } from './components/form-control/form-control.com
     FormsModule,
     HttpClientModule,
     QuicklinkModule,
+    MatButtonModule,
+    MatIconModule
   ],
   // Declaramos nuestro nuesvo provider (servicios) y nuestro interceptor
   providers: [
