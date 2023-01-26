@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { chechTime } from '../interceptors/time.interceptor';
+import { catchError } from 'rxjs/operators';
+import { throwError as observableThrowError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -71,7 +73,21 @@ export class ProductsService {
   los parametros por url en httpCLiente se envian con un objeto llamado parms como argumento de la funcion http a usar
   */
   getProductsParams(offset: number, limit: number) {
+    /*
+    Peticion sin manejo de errores:
     return this.http.get(`https://example.com/api/productos`, { params: { offset, limit } });
+    */
+    /*
+    Peticion con manejo de errores
+    */
+    return this.http
+      .get(`https://example.com/api/productos`, { params: { offset, limit } })
+      .pipe(
+        catchError(this.errorHandler)
+      );;
+  }
+  errorHandler(error: HttpErrorResponse) {
+    return observableThrowError(error.message);
   }
 
   /*

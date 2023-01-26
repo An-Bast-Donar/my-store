@@ -68,6 +68,15 @@ export class ImgComponent implements OnInit {
     this.productsService.deleteProductOfHeroku().subscribe(data => { console.log("Producto eliminado de Heroku:", data); });
     */
     /*
+    Cosumir api manejando errores
+    Para esto el servicio manejar el error y devolverlo como respuesta de la suscribcion
+    this.productsService.postProductToHeroku()
+      .subscribe(
+        data => { console.log("Producto creado en Heroku:", data); },
+        error => { console.log("Error al crear prooducto en heroku:", error); }
+      );
+    */
+    /*
     // Manejo de errores al momento de consumir el servicio
     this.productsService.getProductFromHeroku().subscribe(res => {
       console.log("Producto de Heroku:", data);
