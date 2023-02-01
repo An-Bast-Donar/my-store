@@ -194,3 +194,8 @@ Reactive Forms:
 - Basados en observable
 - Mejora el tipo de Validación de los datos
 - Se usa para Formularios complejos
+
+## Deployment con Azure
+1. Crear ambientes y sus respectivas configuraciones en el angular.json
+2. Crear los atajos a los comandos de despliegue en el package.json
+3. Llamar los atajos de los comandos desde las configuraciones del Azure
