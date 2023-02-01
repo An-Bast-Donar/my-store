@@ -61,6 +61,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -73,6 +81,9 @@
             },
             "development": {
               "browserTarget": "my-store:build:development"
+            },
+            "qa": {
+              "browserTarget": "my-store:build:qa"
             }
           },
           "defaultConfiguration": "development"

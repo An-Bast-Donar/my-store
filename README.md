@@ -199,3 +199,5 @@ Reactive Forms:
 1. Crear ambientes y sus respectivas configuraciones en el angular.json
 2. Crear los atajos a los comandos de despliegue en el package.json
 3. Llamar los atajos de los comandos desde las configuraciones del Azure
+- Se puede crear la carpeta dist de cada ambiente con $ ng build --configuration nombre_ambiente
+- Se puede correr la aplicacion de un ambiente en particular con $ ng serve --configuration nombre_ambiente
