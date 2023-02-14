@@ -201,3 +201,11 @@ Reactive Forms:
 3. Llamar los atajos de los comandos desde las configuraciones del Azure
 - Se puede crear la carpeta dist de cada ambiente con $ ng build --configuration nombre_ambiente
 - Se puede correr la aplicacion de un ambiente en particular con $ ng serve --configuration nombre_ambiente
+
+## Pruebas unitarias
+- Jasmine: Framework que nos ayuda a ejecutar pruebas en js
+- Karma: Herramienta que corre las pruebas que se escribieron con Jasmine, esta configurado en el archivo, karma.conf.js, el puerto, configuracion del reporte de covertura, donde guardarlo, entre otras cosas
+- Reporte de covertura: Metrica que nos dice que tanto codigo abarcan nuestras pruebas
+- Archivo tsconfig.spec.json: contiene la configuracion que se ejecuta al momento de correr el comando $ ng test
+- Las pruebas se crean en cada .spec.ts de cada componente y pueden contener varias partes, el beforeEach, que se ejecuta antes de cada prueba, el it que son las pruebas en si, estas pruebas contienen un argumento con datos de prueba y un argumento en la funcion reservada de jasmine expect con el resultado esperado despues de ejecutar una funcion a probar, aca se pueden probar metodos, carga de archivos, servicios pipe, entre otras muchas otras cosas
+- Todas las pruebas se pueden visualizar mediante el puerto que las expone atravez del navegador y el reporte de covertura se puede revisar en el folder de salida especificado en el archivo de configuracion de karma
